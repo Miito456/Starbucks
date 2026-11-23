@@ -1,118 +1,87 @@
-# ☕ Starbucks® Web Experience 2.0
+# Starbucks® Pickup — Web Ordering & Order Management Platform
 
-<div align="center">
+[![Deploy to GitHub Pages](https://github.com/Miito456/Starbucks/actions/workflows/pages/pages-build-deployment/badge.svg)](https://miito456.github.io/Starbucks/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![JavaScript](https://img.shields.io/badge/ES6+-Vanilla%20JS-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/es/docs/Web/JavaScript)
+[![CSS3](https://img.shields.io/badge/CSS3-Design%20System-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/es/docs/Web/CSS)
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Responsive](https://img.shields.io/badge/Responsive-Design-006241?style=for-the-badge&logo=googlechrome&logoColor=white)
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-222222?style=for-the-badge&logo=github&logoColor=white)
-
-**Una propuesta interactiva y moderna de comercio electrónico y experiencia de marca inspirada en Starbucks®.**
-
-[🌐 Ver Demo en Vivo en GitHub Pages](https://miito456.github.io/Starbucks/)
-
-</div>
+> Una plataforma web orientada al modelo **Starbucks Pickup**: permite explorar el catálogo, ordenar bebidas y alimentos personalizados, generar un ticket digital de retiro en tienda con código de barras y dar seguimiento en tiempo real al estado de preparación del pedido.
 
 ---
 
-## 📖 Descripción del Proyecto
+## ☕ Concepto: Starbucks Pickup
 
-Este proyecto es una aplicación web interactiva que simula la experiencia digital de **Starbucks®**, combinando diseño visual de alta fidelidad, animaciones fluidas, rendimiento optimizado, tienda en línea funcional con carrito persistente, generación de ticket digital e historial de pedidos con seguimiento de estados en vivo.
+El modelo **Starbucks Pickup** está diseñado para agilizar la experiencia de compra mediante un flujo continuo:
 
----
+```
+[ Explorar Catálogo ] ➔ [ Carrito Persistente ] ➔ [ Registro & Pago ] ➔ [ Ticket con Código de Barras ] ➔ [ Monitor de Estado ]
+```
 
-## ✨ Características Principales
-
-### 🏠 1. Inicio Interactivo (Hero Section)
-* **Selector Dinámico de Bebidas**: Cambio fluido de vaso (Frappuccino Verde, Fresa Cream, Frambuesa Coffee) con transición de color sincronizada en el fondo.
-* **Animación de Levitación**: Efecto flotante suave continuo en el vaso principal (`@keyframes floatAnimation`).
-* **Navegación Sticky**: Cabecera con efecto *glassmorphism* al hacer scroll, botón volver arriba suave y menú responsive tipo cajón lateral en dispositivos móviles.
-* **Contador de Carrito en Vivo**: Indicador numérico animado (`badge`) que se sincroniza automáticamente entre todas las páginas.
-
-### 🍵 2. Menú de Productos
-* **Filtros por Categoría**: Pestañas interactivas para explorar *Todos*, *Bebidas*, *Alimentos* y *Extras*.
-* **Tarjetas con Expansión Circular 3D**: Efecto de `clip-path` circular que se expande dinámicamente al pasar el cursor, revelando detalles, precios y botón de compra directa.
-* **Diseño Simétrico y Centrado**: Layout optimizado para 3 productos por fila en pantallas de escritorio y centrado inteligente en pantallas medianas para evitar espacios vacíos.
-
-### 🛒 3. Tienda, Carrito & Ticket Digital
-* **Carrito Persistente con LocalStorage**: Los artículos añadidos se guardan localmente en el navegador y persisten aunque se recargue o cierre la página.
-* **Controladores de Cantidad**: Ajusta o elimina productos fácilmente desde el carrito con cálculo de subtotales y total en tiempo real.
-* **Formulario de Registro Validado**: Validación en tiempo real (regex) para nombre, email, teléfono, edad y dirección con indicadores visuales instantáneos.
-* **15% de Descuento con Tarjeta**: Selector dinámico de método de pago (Tarjeta de Crédito o Efectivo al recoger).
-* **Ticket Digital con Código de Barras**: Generación de recibo oficial con número de pedido, desglose por producto, descuentos y soporte nativo para impresión/guardado en PDF (`@media print`).
-
-### ⏳ 4. Historial de Pedidos y Estados en Vivo
-* **Historial Persistente**: Cada ticket generado se archiva automáticamente en el historial.
-* **Seguimiento de Estados**:
-  - ⏳ **En Espera**: Pedido generado y en cola.
-  - ☕ **En Preparación**: Bebidas y alimentos siendo preparados.
-  - ✅ **Listo para Recoger**: Orden lista en mostrador.
-* **Acciones Rápidas**: Visualización del ticket completo, cambio interactivo de estado y eliminación de registros.
-
-### 📬 5. Contacto & Soporte
-* Tarjeta informativa del creador y enlaces directos a las páginas oficiales de ayuda y comunidad de Starbucks.
-* Formulario de contacto con alertas animadas y notificaciones Toast.
-
-### 🦶 6. Footer Premium
-* Pie de página corporativo estructurado en 4 columnas.
-* Acordeón desplegable para el aviso legal, derechos de autor y patentes.
+1. **Selección**: El usuario explora bebidas artesanales, repostería y coleccionables con filtros interactivos por categoría.
+2. **Personalización y Carrito**: Control de cantidades y persistencia en cliente mediante `localStorage`.
+3. **Registro y Descuento**: Formulario con validación en tiempo real de campos (nombre, correo, teléfono, edad, dirección) y cálculo de descuento automático (15% con tarjeta).
+4. **Emisión de Ticket Digital**: Generación instantánea de comprobante con folio único `#SB-XXXX`, desglose de artículos, fecha, sucursal y código de barras.
+5. **Historial y Seguimiento en Vivo**: Panel de pedidos para monitorear el ciclo de vida de la orden:
+   - `⏳ En Espera`: Pedido emitido y en cola de recepción.
+   - `☕ En Preparación`: En proceso de elaboración por el barista.
+   - `✅ Listo para Recoger`: Orden terminada, disponible en mostrador.
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Arquitectura y Tecnologías
 
-* **HTML5**: Estructura semántica, metaetiquetas de renderizado y atributos de accesibilidad.
-* **CSS3 Moderno**: Variables CSS personalizadas, Flexbox, CSS Grid simétrico, transiciones cúbicas (`cubic-bezier`), *clip-path* y reglas para impresión (`@media print`).
-* **JavaScript (Vanilla ES6+)**: Manipulación del DOM, sistema de notificaciones Toast, persistencia en `localStorage`, eventos dinámicos y validación de expresiones regulares.
-* **Font Awesome 6**: Iconografía vectorial ligera cargada vía CDN.
-* **Google Fonts**: Tipografía moderna *Poppins*.
+El proyecto está construido bajo una arquitectura modular sin dependencias pesadas de frameworks, maximizando la velocidad de carga y la fidelidad visual:
+
+* **HTML5 Semántico**: Estructuración accesible, metadatos responsivos y marcado semántico.
+* **CSS3 Custom Design System (`theme.css`)**:
+  - Paleta de tokens de diseño (`--sb-green`, `--sb-green-dark`, `--sb-accent-cream`, etc.).
+  - Layouts simétricos con **CSS Grid** de 3 columnas y alineación responsiva inteligente.
+  - Microinteracciones con curvas cúbicas (`cubic-bezier(0.16, 1, 0.3, 1)`).
+  - Reglas de impresión exclusivas (`@media print`) para tickets limpios en formato recibo.
+* **JavaScript ES6+ Reactivo (`store.js` & `myscript.js`)**:
+  - **State Management**: Gestión reactiva del carrito y del historial de tickets en `localStorage`.
+  - **Live Validation**: Comprobación continua de expresiones regulares (RegEx) para inputs de formulario.
+  - **Toast Notification Engine**: Sistema propio de alertas no bloqueantes (reemplazando `alert()`).
+  - **Badge Syncing**: Sincronización del contador de artículos entre páginas del sitio.
 
 ---
 
-## 📂 Estructura del Proyecto
+## 📂 Estructura del Repositorio
 
 ```text
-Starbucks/
+├── index.html              # Landing page principal con selector interactivo de bebidas
+├── menu.html               # Catálogo de productos con tarjetas de expansión 3D y filtros
+├── compra.html             # Tienda Pickup, carrito, checkout, ticket digital e historial
+├── contacto.html           # Página de soporte, ayuda oficial y datos del desarrollador
 ├── CSS/
-│   ├── theme.css           # Sistema de diseño global, variables y animaciones
-│   ├── estilo.css          # Estilos específicos de Inicio (Hero y características)
-│   ├── estilomenu.css      # Estilos del menú y tarjetas interactivas
-│   ├── styles.css          # Estilos de la tienda, carrito y formulario de checkout
-│   ├── estiloticket.css    # Estilos del ticket digital e historial de pedidos
-│   └── estilocontacto.css  # Estilos de la página de contacto y soporte
-├── Img/                    # Recursos gráficos (logos, bebidas, alimentos, iconos)
+│   ├── theme.css           # Tokens de diseño, tipografía, navbar, footer y toasts
+│   ├── estilo.css          # Animaciones del Hero y morphing background
+│   ├── estilomenu.css      # Grid simétrico y tarjetas con efecto clip-path
+│   ├── styles.css          # Carrito de compra y formulario de registro
+│   ├── estiloticket.css    # Recibo de compra digital e historial de estados
+│   └── estilocontacto.css  # Layout de atención al cliente y formulario de mensaje
 ├── JS/
-│   ├── myscript.js         # Lógica de navegación, scroll, slider y toasts
-│   └── store.js            # Lógica del carrito, checkout, tickets e historial
-├── index.html              # Página Principal (Inicio)
-├── menu.html               # Página de Menú y Productos
-├── compra.html             # Tienda en Línea, Carrito y Tickets
-├── contacto.html           # Página de Contacto y Desarrollador
-└── README.md               # Documentación del proyecto
+│   ├── store.js            # Lógica de carrito, checkout, generación de ticket e historial
+│   └── myscript.js         # Transición de vaso, menú móvil, sticky header y toasts
+└── Img/                    # Recursos visuales y activos gráficos optimizados
 ```
 
 ---
 
-## 🚀 Despliegue en GitHub Pages
+## 🚀 Despliegue en Vivo
 
-Para publicar o actualizar los cambios en **GitHub Pages**:
+El proyecto se encuentra desplegado de forma continua a través de **GitHub Pages**:
 
-1. Ve a tu repositorio en GitHub: [https://github.com/Miito456/Starbucks](https://github.com/Miito456/Starbucks)
-2. Haz clic en la pestaña **Settings** (Configuración).
-3. En el menú lateral izquierdo, haz clic en **Pages**.
-4. En **Build and deployment > Source**, selecciona `Deploy from a branch`.
-5. En **Branch**, selecciona `main` y la carpeta `/ (root)`. Haz clic en **Save**.
-6. En un par de minutos, tu sitio estará activo en:
-   👉 **`https://miito456.github.io/Starbucks/`**
-
-> **Nota:** Cada vez que hagas `git push origin main`, GitHub Pages detecta los cambios automáticamente y vuelve a desplegar la versión más reciente en 1 a 2 minutos sin necesidad de volver a configurarlo.
+🔗 **[https://miito456.github.io/Starbucks/](https://miito456.github.io/Starbucks/)**
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Desarrollador
 
 * **Miguel Ángel Ramos Soto**
-* Correo: [Mito5524@gmail.com](mailto:Mito5524@gmail.com)
-* Facebook: [Perfil de Facebook](https://www.facebook.com/profile.php?id=100006413612910)
-* Proyecto desarrollado con fines educativos y de portafolio web.
+* **GitHub**: [@Miito456](https://github.com/Miito456)
+* **Correo**: [Mito5524@gmail.com](mailto:Mito5524@gmail.com)
+
+---
+
+*Aviso: Este proyecto fue desarrollado con propósitos académicos y de demostración técnica de interfaces web. Starbucks® y sus logotipos son marcas registradas de Starbucks Corporation.*

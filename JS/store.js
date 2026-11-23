@@ -372,19 +372,21 @@ function renderTicketDetails(order) {
   const parrafo = document.getElementById('parrafo');
   if (!ticketElem || !parrafo) return;
 
+  const isEn = typeof getCurrentLanguage === 'function' && getCurrentLanguage() === 'en';
+
   const ticketContent = `
     <div class="ticket-header-details">
       <div class="ticket-meta-box">
-        <p><strong>Pedido:</strong> #${order.id}</p>
-        <p><strong>Fecha:</strong> ${order.fecha}</p>
+        <p><strong>${isEn ? 'Order:' : 'Pedido:'}</strong> #${order.id}</p>
+        <p><strong>${isEn ? 'Date:' : 'Fecha:'}</strong> ${order.fecha}</p>
       </div>
       <div class="ticket-customer-box">
-        <p><strong>Cliente:</strong> ${order.nom} (${order.edad} años)</p>
+        <p><strong>${isEn ? 'Customer:' : 'Cliente:'}</strong> ${order.nom} (${order.edad} ${isEn ? 'years old' : 'años'})</p>
         <p><strong>Email:</strong> ${order.email}</p>
-        <p><strong>Teléfono:</strong> ${order.tel}</p>
-        <p><strong>Dirección:</strong> ${order.dir}</p>
-        <p><strong>Método de Pago:</strong> <span class="badge-payment">${order.metodo}</span></p>
-        <p><strong>Estado del Pedido:</strong> ${getStatusBadgeHtml(order.status)}</p>
+        <p><strong>${isEn ? 'Phone:' : 'Teléfono:'}</strong> ${order.tel}</p>
+        <p><strong>${isEn ? 'Pickup Location:' : 'Dirección:'}</strong> ${order.dir}</p>
+        <p><strong>${isEn ? 'Payment Method:' : 'Método de Pago:'}</strong> <span class="badge-payment">${order.metodo}</span></p>
+        <p><strong>${isEn ? 'Order Status:' : 'Estado del Pedido:'}</strong> ${getStatusBadgeHtml(order.status)}</p>
       </div>
     </div>
 
@@ -392,9 +394,9 @@ function renderTicketDetails(order) {
       <table>
         <thead>
           <tr>
-            <th>Cant.</th>
-            <th>Producto</th>
-            <th>P. Unit</th>
+            <th>${isEn ? 'Qty' : 'Cant.'}</th>
+            <th>${isEn ? 'Product' : 'Producto'}</th>
+            <th>${isEn ? 'Unit Price' : 'P. Unit'}</th>
             <th>Subtotal</th>
           </tr>
         </thead>
@@ -413,8 +415,8 @@ function renderTicketDetails(order) {
 
     <div class="ticket-totals-box">
       <div class="total-row"><span>Subtotal:</span> <strong>$${order.subtotal.toFixed(2)}</strong></div>
-      ${order.descuento > 0 ? `<div class="total-row discount"><span>Descuento Especial (15%):</span> <strong>-$${order.descuento.toFixed(2)}</strong></div>` : ''}
-      <div class="total-row final-total"><span>Total a Pagar:</span> <strong>$${order.totalPagar.toFixed(2)} USD</strong></div>
+      ${order.descuento > 0 ? `<div class="total-row discount"><span>${isEn ? 'Special Discount (15%):' : 'Descuento Especial (15%):'}</span> <strong>-$${order.descuento.toFixed(2)}</strong></div>` : ''}
+      <div class="total-row final-total"><span>${isEn ? 'Total to Pay:' : 'Total a Pagar:'}</span> <strong>$${order.totalPagar.toFixed(2)} USD</strong></div>
     </div>
   `;
 
@@ -451,12 +453,13 @@ function updateOrderInHistory(orderId, updateFn) {
 }
 
 function getStatusBadgeHtml(status) {
-  if (status === 'Listo para Recoger') {
-    return `<span class="status-badge status-listo"><i class="fas fa-check-circle"></i> Listo para Recoger</span>`;
-  } else if (status === 'En Preparación') {
-    return `<span class="status-badge status-preparacion"><i class="fas fa-mug-hot"></i> En Preparación</span>`;
+  const isEn = typeof getCurrentLanguage === 'function' && getCurrentLanguage() === 'en';
+  if (status === 'Listo para Recoger' || status === 'Ready for Pickup') {
+    return `<span class="status-badge status-listo"><i class="fas fa-check-circle"></i> ${isEn ? 'Ready for Pickup' : 'Listo para Recoger'}</span>`;
+  } else if (status === 'En Preparación' || status === 'In Preparation') {
+    return `<span class="status-badge status-preparacion"><i class="fas fa-mug-hot"></i> ${isEn ? 'In Preparation' : 'En Preparación'}</span>`;
   } else {
-    return `<span class="status-badge status-espera"><i class="fas fa-clock"></i> En Espera</span>`;
+    return `<span class="status-badge status-espera"><i class="fas fa-clock"></i> ${isEn ? 'Pending / In Queue' : 'En Espera'}</span>`;
   }
 }
 
@@ -464,16 +467,23 @@ function renderTicketHistory() {
   const container = document.getElementById('historial-contenedor');
   if (!container) return;
 
+  const isEn = typeof getCurrentLanguage === 'function' && getCurrentLanguage() === 'en';
   const history = getOrderHistory();
   const countBadge = document.getElementById('historial-count');
-  if (countBadge) countBadge.textContent = `${history.length} pedido${history.length === 1 ? '' : 's'}`;
+  if (countBadge) {
+    if (isEn) {
+      countBadge.textContent = `${history.length} order${history.length === 1 ? '' : 's'}`;
+    } else {
+      countBadge.textContent = `${history.length} pedido${history.length === 1 ? '' : 's'}`;
+    }
+  }
 
   if (history.length === 0) {
     container.innerHTML = `
       <div class="history-empty">
         <i class="fas fa-receipt"></i>
-        <p>Aún no hay tickets generados en el historial.</p>
-        <span>Cuando completes el registro y generes un ticket, aparecerá aquí con su estado en vivo.</span>
+        <p>${isEn ? 'No orders generated in history yet.' : 'Aún no hay tickets generados en el historial.'}</p>
+        <span>${isEn ? 'Once you complete checkout and generate a ticket, your order will appear here with live tracking.' : 'Cuando completes el registro y generes un ticket, aparecerá aquí con su estado en vivo.'}</span>
       </div>
     `;
     return;
@@ -499,19 +509,19 @@ function renderTicketHistory() {
             <span><i class="fas fa-shopping-bag"></i> ${itemsSummary}</span>
           </div>
           <div class="history-price-info">
-            <span class="history-total-label">Total</span>
+            <span class="history-total-label">${isEn ? 'Total' : 'Total'}</span>
             <span class="history-total-val">$${order.totalPagar.toFixed(2)}</span>
           </div>
         </div>
 
         <div class="history-card-actions">
-          <button type="button" class="btn-history-action btn-view" onclick="viewHistoryTicket('${order.id}')" title="Ver Ticket Completo">
-            <i class="fas fa-eye"></i> Ver Ticket
+          <button type="button" class="btn-history-action btn-view" onclick="viewHistoryTicket('${order.id}')" title="${isEn ? 'View Complete Ticket' : 'Ver Ticket Completo'}">
+            <i class="fas fa-eye"></i> ${isEn ? 'View Ticket' : 'Ver Ticket'}
           </button>
-          <button type="button" class="btn-history-action btn-step" onclick="cycleOrderStatus('${order.id}')" title="Cambiar estado del pedido">
-            <i class="fas fa-sync-alt"></i> Cambiar Estado
+          <button type="button" class="btn-history-action btn-step" onclick="cycleOrderStatus('${order.id}')" title="${isEn ? 'Change order status' : 'Cambiar estado del pedido'}">
+            <i class="fas fa-sync-alt"></i> ${isEn ? 'Change Status' : 'Cambiar Estado'}
           </button>
-          <button type="button" class="btn-history-action btn-delete" onclick="deleteHistoryTicket('${order.id}')" title="Eliminar del historial">
+          <button type="button" class="btn-history-action btn-delete" onclick="deleteHistoryTicket('${order.id}')" title="${isEn ? 'Delete from history' : 'Eliminar del historial'}">
             <i class="fas fa-trash-alt"></i>
           </button>
         </div>

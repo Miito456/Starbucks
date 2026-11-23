@@ -25,23 +25,32 @@
       </a>
     </div>
 
-    <button class="toggle-menu-btn" onclick="toggleMenu()" aria-label="Abrir Menú de Navegación">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="header-right-actions">
+      <!-- Language Switcher -->
+      <div class="lang-switch-container" aria-label="Language Selector">
+        <button type="button" class="lang-btn active" data-lang="es" onclick="switchLanguage('es')">ES</button>
+        <span class="lang-divider">/</span>
+        <button type="button" class="lang-btn" data-lang="en" onclick="switchLanguage('en')">EN</button>
+      </div>
+
+      <button class="toggle-menu-btn" onclick="toggleMenu()" aria-label="Abrir Menú de Navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
 
     <div class="navegador-wrapper">
       <ul class="navegador">
-        <li><a href="index.html" class="activo"><i class="fas fa-home"></i> Inicio</a></li>
-        <li><a href="menu.html"><i class="fas fa-mug-hot"></i> Menú</a></li>
+        <li><a href="index.html" class="activo"><i class="fas fa-home"></i> <span data-i18n="nav_home">Inicio</span></a></li>
+        <li><a href="menu.html"><i class="fas fa-mug-hot"></i> <span data-i18n="nav_menu">Menú</span></a></li>
         <li>
           <a href="compra.html" class="nav-cart-link">
-            <i class="fas fa-shopping-cart"></i> Compra
+            <i class="fas fa-shopping-cart"></i> <span data-i18n="nav_shop">Compra</span>
             <span class="cart-badge">0</span>
           </a>
         </li>
-        <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+        <li><a href="contacto.html"><i class="fas fa-envelope"></i> <span data-i18n="nav_contact">Contacto</span></a></li>
       </ul>
     </div>
   </header>
@@ -52,30 +61,30 @@
 
     <div class="hero-container">
       <div class="textbox">
-        <h1>No es solo un café<br>Es <span>Starbucks</span></h1>
-        <p>Descubre lo que hace que Starbucks® sea único: desde nuestro compromiso con la conexión humana y el café de grano ético, hasta nuestras acogedoras cafeterías y bebidas que transforman tu día.</p>
+        <h1 data-i18n="hero_title">No es solo un café<br>Es <span>Starbucks</span></h1>
+        <p data-i18n="hero_desc">Descubre lo que hace que Starbucks® sea único: desde nuestro compromiso con la conexión humana y el café de grano ético, hasta nuestras acogedoras cafeterías y bebidas que transforman tu día.</p>
         
         <div class="hero-actions">
           <a href="menu.html" class="btn-hero-primary">
-            <i class="fas fa-coffee"></i> Ver Menú Completo
+            <i class="fas fa-coffee"></i> <span data-i18n="hero_btn_menu">Ver Menú Completo</span>
           </a>
           <a href="compra.html" class="btn-hero-secondary">
-            <i class="fas fa-shopping-bag"></i> Ordenar en Línea
+            <i class="fas fa-shopping-bag"></i> <span data-i18n="hero_btn_order">Ordenar en Línea</span>
           </a>
         </div>
 
         <div class="hero-stats">
           <div class="stat-item">
             <span class="stat-num">100%</span>
-            <span class="stat-label">Café de Origen Ético</span>
+            <span class="stat-label" data-i18n="stat_ethical">Café de Origen Ético</span>
           </div>
           <div class="stat-item">
             <span class="stat-num">+30</span>
-            <span class="stat-label">Bebidas & Postres</span>
+            <span class="stat-label" data-i18n="stat_items">Bebidas & Postres</span>
           </div>
           <div class="stat-item">
             <span class="stat-num">4.9 ★</span>
-            <span class="stat-label">Valoración de Clientes</span>
+            <span class="stat-label" data-i18n="stat_rating">Valoración de Clientes</span>
           </div>
         </div>
       </div>
@@ -123,8 +132,8 @@
   <section class="home-features">
     <div class="home-features-wrapper">
       <div class="features-header">
-        <span class="sub-title">La Diferencia Starbucks</span>
-        <h2>La taza perfecta, preparada especialmente para ti</h2>
+        <span class="sub-title" data-i18n="feat_badge">La Diferencia Starbucks</span>
+        <h2 data-i18n="feat_title">La taza perfecta, preparada especialmente para ti</h2>
       </div>
 
       <div class="features-grid">
@@ -132,24 +141,24 @@
           <div class="feature-icon-box">
             <i class="fas fa-seedling"></i>
           </div>
-          <h3>Granos 100% Arábica</h3>
-          <p>Seleccionamos meticulosamente cada grano de las mejores regiones cafetaleras para garantizar una nota de cata inigualable.</p>
+          <h3 data-i18n="feat_1_title">Granos 100% Arábica</h3>
+          <p data-i18n="feat_1_desc">Seleccionamos meticulosamente cada grano de las mejores regiones cafetaleras para garantizar una nota de cata inigualable.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon-box">
             <i class="fas fa-hand-holding-heart"></i>
           </div>
-          <h3>Conexión & Comunidad</h3>
-          <p>Más que un café, creamos espacios cálidos donde el trabajo, la amistad y el confort se encuentran en cada visita.</p>
+          <h3 data-i18n="feat_2_title">Conexión & Comunidad</h3>
+          <p data-i18n="feat_2_desc">Más que un café, creamos espacios cálidos donde el trabajo, la amistad y el confort se encuentran en cada visita.</p>
         </div>
 
         <div class="feature-card">
           <div class="feature-icon-box">
             <i class="fas fa-truck-fast"></i>
           </div>
-          <h3>Ordena y Recoge</h3>
-          <p>Haz tu pedido desde nuestra plataforma web, personaliza tus complementos y recoge rápidamente en tu sucursal más cercana.</p>
+          <h3 data-i18n="feat_3_title">Ordena y Recoge</h3>
+          <p data-i18n="feat_3_desc">Haz tu pedido desde nuestra plataforma web, personaliza tus complementos y recoge rápidamente en tu sucursal más cercana.</p>
         </div>
       </div>
     </div>
@@ -160,11 +169,11 @@
     <div class="footer-top-cta">
       <div class="footer-cta-wrapper">
         <div class="footer-cta-text">
-          <h3><i class="fas fa-star" style="color: var(--sb-accent-gold);"></i> Únete a Starbucks Rewards</h3>
-          <p>Gana estrellas con cada compra, disfruta de bebidas de cortesía en tu cumpleaños y acceso exclusivo a promociones.</p>
+          <h3><i class="fas fa-star" style="color: var(--sb-accent-gold);"></i> <span data-i18n="footer_rewards_title">Únete a Starbucks Rewards</span></h3>
+          <p data-i18n="footer_rewards_desc">Gana estrellas con cada compra, disfruta de bebidas de cortesía en tu cumpleaños y acceso exclusivo a promociones.</p>
         </div>
         <a href="compra.html" class="footer-cta-btn">
-          <span>Comenzar Ahora</span> <i class="fas fa-arrow-right"></i>
+          <span data-i18n="footer_rewards_btn">Comenzar Ahora</span> <i class="fas fa-arrow-right"></i>
         </a>
       </div>
     </div>
@@ -190,7 +199,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Explorar Menú</h4>
+        <h4 data-i18n="footer_menu_header">Explorar Menú</h4>
         <ul class="footer-links">
           <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Bebidas Frías & Frappuccinos</a></li>
           <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Espresso & Café Clásico</a></li>
@@ -201,7 +210,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Soporte & Ayuda</h4>
+        <h4 data-i18n="footer_support_header">Soporte & Ayuda</h4>
         <ul class="footer-links">
           <li><a href="https://www.starbucks.com.mx/customer-service/" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Centro de Ayuda</a></li>
           <li><a href="contacto.html"><i class="fas fa-chevron-right"></i> Formulario de Contacto</a></li>
@@ -211,7 +220,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Desarrollador del Proyecto</h4>
+        <h4 data-i18n="footer_author_header">Desarrollador del Proyecto</h4>
         <div class="author-badge">
           <div class="author-badge-top">
             <div class="author-avatar-icon">
@@ -234,7 +243,7 @@
     <!-- Collapsible Legal Terms & Rights -->
     <div class="footer-legal-card">
       <button class="legal-toggle-btn" onclick="toggleLegal()" aria-expanded="false">
-        <span><i class="fas fa-shield-alt" style="color: var(--sb-accent-gold); margin-right: 8px;"></i> Aviso Legal, Derechos de Autor y Marcas Registradas</span>
+        <span><i class="fas fa-shield-alt" style="color: var(--sb-accent-gold); margin-right: 8px;"></i> <span data-i18n="footer_legal_btn">Aviso Legal, Derechos de Autor y Marcas Registradas</span></span>
         <i class="fas fa-chevron-down"></i>
       </button>
       <div class="legal-content-body">
@@ -246,7 +255,7 @@
     <!-- Bottom Meta Copyright Bar -->
     <div class="footer-bottom">
       <div class="footer-bottom-wrapper">
-        <div>
+        <div data-i18n="footer_rights">
           © 2026 Starbucks Corporation & Miguel Ángel Ramos Soto. Todos los derechos reservados.
         </div>
         <div class="footer-meta-dates">
@@ -258,6 +267,7 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="JS/translations.js"></script>
   <script src="JS/myscript.js"></script>
 </body>
 </html>

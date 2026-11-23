@@ -25,23 +25,32 @@
       </a>
     </div>
 
-    <button class="toggle-menu-btn" onclick="toggleMenu()" aria-label="Abrir Menú de Navegación">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="header-right-actions">
+      <!-- Language Switcher -->
+      <div class="lang-switch-container" aria-label="Language Selector">
+        <button type="button" class="lang-btn active" data-lang="es" onclick="switchLanguage('es')">ES</button>
+        <span class="lang-divider">/</span>
+        <button type="button" class="lang-btn" data-lang="en" onclick="switchLanguage('en')">EN</button>
+      </div>
+
+      <button class="toggle-menu-btn" onclick="toggleMenu()" aria-label="Abrir Menú de Navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
 
     <div class="navegador-wrapper">
       <ul class="navegador">
-        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-        <li><a href="menu.html"><i class="fas fa-mug-hot"></i> Menú</a></li>
+        <li><a href="index.html"><i class="fas fa-home"></i> <span data-i18n="nav_home">Inicio</span></a></li>
+        <li><a href="menu.html"><i class="fas fa-mug-hot"></i> <span data-i18n="nav_menu">Menú</span></a></li>
         <li>
           <a href="compra.html" class="nav-cart-link">
-            <i class="fas fa-shopping-cart"></i> Compra
+            <i class="fas fa-shopping-cart"></i> <span data-i18n="nav_shop">Compra</span>
             <span class="cart-badge">0</span>
           </a>
         </li>
-        <li><a href="contacto.html" class="activo"><i class="fas fa-envelope"></i> Contacto</a></li>
+        <li><a href="contacto.html" class="activo"><i class="fas fa-envelope"></i> <span data-i18n="nav_contact">Contacto</span></a></li>
       </ul>
     </div>
   </header>
@@ -49,9 +58,9 @@
   <!-- Banner -->
   <section class="contact-hero">
     <div class="contact-hero-content">
-      <span class="contact-hero-tag"><i class="fas fa-headset"></i> Atención & Soporte</span>
-      <h1>Ponte en Contacto</h1>
-      <p>Estamos aquí para escucharte. Ya sea que tengas preguntas sobre nuestros productos, sugerencias para mejorar tu experiencia o desees contactar al desarrollador.</p>
+      <span class="contact-hero-tag"><i class="fas fa-headset"></i> <span data-i18n="contact_hero_tag">Atención & Soporte</span></span>
+      <h1 data-i18n="contact_hero_title">Ponte en Contacto</h1>
+      <p data-i18n="contact_hero_desc">Estamos aquí para escucharte. Ya sea que tengas preguntas sobre nuestros productos, sugerencias para mejorar tu experiencia o desees contactar al desarrollador.</p>
     </div>
   </section>
 
@@ -72,20 +81,20 @@
           </div>
           <div class="dev-meta">
             <h3>Miguel Ángel Ramos Soto</h3>
-            <span class="dev-title-pill"><i class="fas fa-code"></i> Creador del Proyecto</span>
+            <span class="dev-title-pill"><i class="fas fa-code"></i> <span data-i18n="dev_title">Creador del Proyecto</span></span>
           </div>
         </div>
-        <p class="dev-bio">
-          Desarrollador web enfocado en interfaces interactivas, rendimiento y experiencia de usuario. Este sitio fue diseñado como una propuesta digital moderna para Starbucks®.
+        <p class="dev-bio" data-i18n="dev_bio">
+          Desarrollador web enfocado en interfaces interactivas, rendimiento y experiencia de usuario. Este sitio fue diseñado como una propuesta digital moderna para Starbucks® Pickup.
         </p>
         <div class="dev-contact-items">
           <div class="dev-contact-row">
-            <i class="fas fa-envelope"></i>
-            <span>Email: <a href="mailto:Mito5524@gmail.com">Mito5524@gmail.com</a></span>
-          </div>
-          <div class="dev-contact-row">
             <i class="fab fa-github"></i>
             <span>GitHub: <a href="https://github.com/Miito456" target="_blank" rel="noopener noreferrer">@Miito456</a></span>
+          </div>
+          <div class="dev-contact-row">
+            <i class="fas fa-envelope"></i>
+            <span>Email: <a href="mailto:Mito5524@gmail.com">Mito5524@gmail.com</a></span>
           </div>
           <div class="dev-contact-row">
             <i class="fas fa-map-marker-alt"></i>
@@ -96,31 +105,31 @@
 
       <!-- Support Links Card -->
       <div class="support-card">
-        <h4><i class="fas fa-hands-helping"></i> Soporte Oficial Starbucks</h4>
-        <p>Inspirar y nutrir el espíritu humano: Una persona, una taza y una comunidad a la vez. Encuentra ayuda rápida sobre compras, recompensas y facturación.</p>
+        <h4><i class="fas fa-hands-helping"></i> <span data-i18n="official_support_title">Soporte Oficial Starbucks</span></h4>
+        <p data-i18n="official_support_desc">Inspirar y nutrir el espíritu humano: Una persona, una taza y una comunidad a la vez. Encuentra ayuda rápida sobre compras, recompensas y facturación.</p>
         
         <div class="support-links-grid">
           <a href="https://www.starbucks.com.mx/customer-service/" target="_blank" rel="noopener noreferrer" class="support-link-item">
             <i class="fas fa-question-circle"></i>
             <div class="support-link-text">
-              <strong>Centro de Ayuda & FAQ</strong>
-              <p>Respuestas a preguntas frecuentes sobre pedidos y facturas.</p>
+              <strong data-i18n="help_center_title">Centro de Ayuda & FAQ</strong>
+              <p data-i18n="help_center_desc">Respuestas a preguntas frecuentes sobre pedidos y facturas.</p>
             </div>
           </a>
 
           <a href="https://www.starbucks.es/responsibility/community" target="_blank" rel="noopener noreferrer" class="support-link-item">
             <i class="fas fa-users"></i>
             <div class="support-link-text">
-              <strong>Comunidad Starbucks</strong>
-              <p>Únete a miles de amantes del café compartiendo ideas y opiniones.</p>
+              <strong data-i18n="community_title">Comunidad Starbucks</strong>
+              <p data-i18n="community_desc">Únete a miles de amantes del café compartiendo ideas y opiniones.</p>
             </div>
           </a>
 
           <a href="https://www.starbucks.com.mx/customer-service/Contactanos" target="_blank" rel="noopener noreferrer" class="support-link-item">
             <i class="fas fa-comment-alt"></i>
             <div class="support-link-text">
-              <strong>Portal de Atención al Cliente</strong>
-              <p>Envía consultas directas al equipo de Starbucks Corporation.</p>
+              <strong data-i18n="support_portal_title">Portal de Atención al Cliente</strong>
+              <p data-i18n="support_portal_desc">Envía consultas directas al equipo de Starbucks Corporation.</p>
             </div>
           </a>
         </div>
@@ -131,40 +140,40 @@
     <!-- Right Column: Interactive Contact Form -->
     <div class="contact-form-card">
       <div class="form-header">
-        <h2>Envíanos un Mensaje</h2>
-        <p>Rellena el siguiente formulario y te responderemos lo más pronto posible.</p>
+        <h2 data-i18n="form_send_title">Envíanos un Mensaje</h2>
+        <p data-i18n="form_send_desc">Rellena el siguiente formulario y te responderemos lo más pronto posible.</p>
       </div>
 
       <form id="contact-form" onsubmit="handleContactSubmit(event)">
         <div class="contact-form-grid">
           
           <div class="form-field">
-            <label for="c-nombre">Nombre Completo *</label>
-            <input type="text" id="c-nombre" name="nombre" placeholder="Ej. Carlos Mendoza" required>
+            <label for="c-nombre" data-i18n="lbl_name">Nombre Completo *</label>
+            <input type="text" id="c-nombre" name="nombre" placeholder="Ej. Carlos Mendoza" data-i18n-placeholder="lbl_name" required>
           </div>
 
           <div class="form-field">
-            <label for="c-correo">Correo Electrónico *</label>
-            <input type="email" id="c-correo" name="correo" placeholder="correo@ejemplo.com" required>
+            <label for="c-correo" data-i18n="lbl_email">Correo Electrónico *</label>
+            <input type="email" id="c-correo" name="correo" placeholder="correo@ejemplo.com" data-i18n-placeholder="lbl_email" required>
           </div>
 
           <div class="form-field">
-            <label for="c-asunto">Motivo de Contacto</label>
+            <label for="c-asunto" data-i18n="lbl_subject">Motivo de Contacto</label>
             <select id="c-asunto" name="asunto">
-              <option value="duda-pedido">Duda sobre un pedido o producto</option>
-              <option value="sugerencia">Sugerencia de mejora para la web</option>
-              <option value="contacto-dev">Contacto profesional con el desarrollador</option>
-              <option value="otro">Otro asunto</option>
+              <option value="duda-pedido" data-i18n="form_opt_1">Duda sobre un pedido o producto</option>
+              <option value="sugerencia" data-i18n="form_opt_2">Sugerencia de mejora para la web</option>
+              <option value="contacto-dev" data-i18n="form_opt_3">Contacto profesional con el desarrollador</option>
+              <option value="otro" data-i18n="form_opt_4">Otro asunto</option>
             </select>
           </div>
 
           <div class="form-field">
-            <label for="c-mensaje">Tu Mensaje *</label>
+            <label for="c-mensaje" data-i18n="lbl_message">Tu Mensaje *</label>
             <textarea id="c-mensaje" name="mensaje" placeholder="Escribe aquí tu consulta o comentario detallado..." required></textarea>
           </div>
 
           <button type="submit" class="btn-send-message">
-            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+            <i class="fas fa-paper-plane"></i> <span data-i18n="btn_submit_msg">Enviar Mensaje</span>
           </button>
 
           <div class="contact-success-alert" id="contact-success">
@@ -182,11 +191,11 @@
     <div class="footer-top-cta">
       <div class="footer-cta-wrapper">
         <div class="footer-cta-text">
-          <h3><i class="fas fa-coffee" style="color: var(--sb-accent-gold);"></i> ¿Se te antoja un café?</h3>
-          <p>Conoce las notas de cata de nuestros granos y las bebidas de temporada disponibles hoy.</p>
+          <h3><i class="fas fa-coffee" style="color: var(--sb-accent-gold);"></i> <span data-i18n="footer_rewards_title">¿Se te antoja un café?</span></h3>
+          <p data-i18n="footer_rewards_desc">Conoce las notas de cata de nuestros granos y las bebidas de temporada disponibles hoy.</p>
         </div>
         <a href="menu.html" class="footer-cta-btn">
-          <span>Ver Menú</span> <i class="fas fa-arrow-right"></i>
+          <span data-i18n="nav_menu">Ver Menú</span> <i class="fas fa-arrow-right"></i>
         </a>
       </div>
     </div>
@@ -212,7 +221,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Explorar Menú</h4>
+        <h4 data-i18n="footer_menu_header">Explorar Menú</h4>
         <ul class="footer-links">
           <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Bebidas Frías & Frappuccinos</a></li>
           <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Espresso & Café Clásico</a></li>
@@ -223,7 +232,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Soporte & Ayuda</h4>
+        <h4 data-i18n="footer_support_header">Soporte & Ayuda</h4>
         <ul class="footer-links">
           <li><a href="https://www.starbucks.com.mx/customer-service/" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Centro de Ayuda</a></li>
           <li><a href="contacto.html"><i class="fas fa-chevron-right"></i> Formulario de Contacto</a></li>
@@ -233,7 +242,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Desarrollador del Proyecto</h4>
+        <h4 data-i18n="footer_author_header">Desarrollador del Proyecto</h4>
         <div class="author-badge">
           <div class="author-badge-top">
             <div class="author-avatar-icon">
@@ -256,7 +265,7 @@
     <!-- Collapsible Legal Terms & Rights -->
     <div class="footer-legal-card">
       <button class="legal-toggle-btn" onclick="toggleLegal()" aria-expanded="false">
-        <span><i class="fas fa-shield-alt" style="color: var(--sb-accent-gold); margin-right: 8px;"></i> Aviso Legal, Derechos de Autor y Marcas Registradas</span>
+        <span><i class="fas fa-shield-alt" style="color: var(--sb-accent-gold); margin-right: 8px;"></i> <span data-i18n="footer_legal_btn">Aviso Legal, Derechos de Autor y Marcas Registradas</span></span>
         <i class="fas fa-chevron-down"></i>
       </button>
       <div class="legal-content-body">
@@ -268,7 +277,7 @@
     <!-- Bottom Meta Copyright Bar -->
     <div class="footer-bottom">
       <div class="footer-bottom-wrapper">
-        <div>
+        <div data-i18n="footer_rights">
           © 2026 Starbucks Corporation & Miguel Ángel Ramos Soto. Todos los derechos reservados.
         </div>
         <div class="footer-meta-dates">
@@ -280,13 +289,15 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="JS/translations.js"></script>
   <script src="JS/myscript.js"></script>
   <script>
     function handleContactSubmit(e) {
       e.preventDefault();
       const alertBox = document.getElementById('contact-success');
       alertBox.style.display = 'block';
-      showToast('¡Mensaje enviado con éxito!', 'success');
+      const isEn = getCurrentLanguage() === 'en';
+      showToast(isEn ? 'Message sent successfully!' : '¡Mensaje enviado con éxito!', 'success');
       e.target.reset();
       setTimeout(() => {
         alertBox.style.display = 'none';

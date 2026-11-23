@@ -26,38 +26,47 @@
       </a>
     </div>
 
-    <button class="toggle-menu-btn" onclick="toggleMenu()" aria-label="Abrir Menú de Navegación">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="header-right-actions">
+      <!-- Language Switcher -->
+      <div class="lang-switch-container" aria-label="Language Selector">
+        <button type="button" class="lang-btn active" data-lang="es" onclick="switchLanguage('es')">ES</button>
+        <span class="lang-divider">/</span>
+        <button type="button" class="lang-btn" data-lang="en" onclick="switchLanguage('en')">EN</button>
+      </div>
+
+      <button class="toggle-menu-btn" onclick="toggleMenu()" aria-label="Abrir Menú de Navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
 
     <div class="navegador-wrapper">
       <ul class="navegador">
-        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-        <li><a href="menu.html"><i class="fas fa-mug-hot"></i> Menú</a></li>
+        <li><a href="index.html"><i class="fas fa-home"></i> <span data-i18n="nav_home">Inicio</span></a></li>
+        <li><a href="menu.html"><i class="fas fa-mug-hot"></i> <span data-i18n="nav_menu">Menú</span></a></li>
         <li>
           <a href="compra.html" class="nav-cart-link activo">
-            <i class="fas fa-shopping-cart"></i> Compra
+            <i class="fas fa-shopping-cart"></i> <span data-i18n="nav_shop">Compra</span>
             <span class="cart-badge">0</span>
           </a>
         </li>
-        <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+        <li><a href="contacto.html"><i class="fas fa-envelope"></i> <span data-i18n="nav_contact">Contacto</span></a></li>
       </ul>
     </div>
   </header>
 
   <!-- Banner -->
   <section class="shop-hero">
-    <h1>Tienda & Pedido en Línea</h1>
-    <p>Selecciona tus productos favoritos, agrégalos al carrito y completa tu registro para generar tu ticket digital con 15% de descuento al pagar con tarjeta.</p>
+    <h1 data-i18n="shop_hero_title">Tienda & Pedido en Línea</h1>
+    <p data-i18n="shop_hero_desc">Selecciona tus productos favoritos, agrégalos al carrito y completa tu registro para generar tu ticket digital con 15% de descuento al pagar con tarjeta.</p>
   </section>
 
   <div class="container">
     
     <!-- 1. Bebidas -->
     <section class="content-section">
-      <h2 class="section-header"><i class="fas fa-mug-hot"></i> Bebidas de Especialidad</h2>
+      <h2 class="section-header"><i class="fas fa-mug-hot"></i> <span data-i18n="sec_drinks_title">Bebidas de Especialidad</span></h2>
       <div class="shop-items">
         <!-- Item 1 -->
         <div class="shop-item">
@@ -68,7 +77,7 @@
           <div class="shop-item-details">
             <span class="shop-item-price">$12.99</span>
             <button class="btn btn-primary shop-item-button" type="button">
-              <i class="fas fa-cart-plus"></i> Añadir
+              <i class="fas fa-cart-plus"></i> <span data-i18n="btn_add_cart">Añadir</span>
             </button>
           </div>
         </div>
@@ -82,7 +91,7 @@
           <div class="shop-item-details">
             <span class="shop-item-price">$14.99</span>
             <button class="btn btn-primary shop-item-button" type="button">
-              <i class="fas fa-cart-plus"></i> Añadir
+              <i class="fas fa-cart-plus"></i> <span data-i18n="btn_add_cart">Añadir</span>
             </button>
           </div>
         </div>
@@ -96,7 +105,7 @@
           <div class="shop-item-details">
             <span class="shop-item-price">$9.99</span>
             <button class="btn btn-primary shop-item-button" type="button">
-              <i class="fas fa-cart-plus"></i> Añadir
+              <i class="fas fa-cart-plus"></i> <span data-i18n="btn_add_cart">Añadir</span>
             </button>
           </div>
         </div>
@@ -105,7 +114,7 @@
 
     <!-- 2. Alimentos -->
     <section class="content-section">
-      <h2 class="section-header"><i class="fas fa-cookie-bite"></i> Alimentos & Repostería</h2>
+      <h2 class="section-header"><i class="fas fa-cookie-bite"></i> <span data-i18n="sec_food_title">Alimentos & Repostería</span></h2>
       <div class="shop-items">
         <!-- Item 4 -->
         <div class="shop-item">
@@ -116,7 +125,7 @@
           <div class="shop-item-details">
             <span class="shop-item-price">$5.99</span>
             <button class="btn btn-primary shop-item-button" type="button">
-              <i class="fas fa-cart-plus"></i> Añadir
+              <i class="fas fa-cart-plus"></i> <span data-i18n="btn_add_cart">Añadir</span>
             </button>
           </div>
         </div>
@@ -130,7 +139,7 @@
           <div class="shop-item-details">
             <span class="shop-item-price">$6.99</span>
             <button class="btn btn-primary shop-item-button" type="button">
-              <i class="fas fa-cart-plus"></i> Añadir
+              <i class="fas fa-cart-plus"></i> <span data-i18n="btn_add_cart">Añadir</span>
             </button>
           </div>
         </div>
@@ -144,7 +153,7 @@
           <div class="shop-item-details">
             <span class="shop-item-price">$8.99</span>
             <button class="btn btn-primary shop-item-button" type="button">
-              <i class="fas fa-cart-plus"></i> Añadir
+              <i class="fas fa-cart-plus"></i> <span data-i18n="btn_add_cart">Añadir</span>
             </button>
           </div>
         </div>
@@ -153,7 +162,7 @@
 
     <!-- 3. Extras -->
     <section class="content-section">
-      <h2 class="section-header"><i class="fas fa-gift"></i> Extras & Mercancía</h2>
+      <h2 class="section-header"><i class="fas fa-gift"></i> <span data-i18n="sec_extras_title">Extras & Mercancía</span></h2>
       <div class="shop-items">
         <!-- Item 7 -->
         <div class="shop-item">
@@ -164,7 +173,7 @@
           <div class="shop-item-details">
             <span class="shop-item-price">$12.99</span>
             <button class="btn btn-primary shop-item-button" type="button">
-              <i class="fas fa-cart-plus"></i> Añadir
+              <i class="fas fa-cart-plus"></i> <span data-i18n="btn_add_cart">Añadir</span>
             </button>
           </div>
         </div>
@@ -178,7 +187,7 @@
           <div class="shop-item-details">
             <span class="shop-item-price">$20.99</span>
             <button class="btn btn-primary shop-item-button" type="button">
-              <i class="fas fa-cart-plus"></i> Añadir
+              <i class="fas fa-cart-plus"></i> <span data-i18n="btn_add_cart">Añadir</span>
             </button>
           </div>
         </div>
@@ -192,7 +201,7 @@
           <div class="shop-item-details">
             <span class="shop-item-price">$18.99</span>
             <button class="btn btn-primary shop-item-button" type="button">
-              <i class="fas fa-cart-plus"></i> Añadir
+              <i class="fas fa-cart-plus"></i> <span data-i18n="btn_add_cart">Añadir</span>
             </button>
           </div>
         </div>
@@ -201,12 +210,12 @@
 
     <!-- 4. Shopping Cart -->
     <section class="cart-card" id="seccion-carrito">
-      <h2 class="section-header"><i class="fas fa-shopping-cart"></i> Tu Carrito de Compra</h2>
+      <h2 class="section-header"><i class="fas fa-shopping-cart"></i> <span data-i18n="cart_header_title">Tu Carrito de Compra</span></h2>
       
       <div class="cart-header-row">
-        <span style="flex: 2;">Artículo</span>
-        <span style="flex: 1; text-align: center;">Precio</span>
-        <span style="flex: 1.2; text-align: right;">Cantidad</span>
+        <span style="flex: 2;" data-i18n="cart_col_item">Artículo</span>
+        <span style="flex: 1; text-align: center;" data-i18n="cart_col_price">Precio</span>
+        <span style="flex: 1.2; text-align: right;" data-i18n="cart_col_qty">Cantidad</span>
       </div>
 
       <div class="cart-items">
@@ -215,12 +224,12 @@
 
       <div class="cart-empty-message" style="display: none;">
         <i class="fas fa-shopping-basket"></i>
-        <p>Tu carrito está actualmente vacío.</p>
-        <p style="font-size: 0.9rem; margin-top: 4px;">Selecciona productos de arriba o visita nuestro menú para añadir tus bebidas favoritas.</p>
+        <p data-i18n="cart_empty_title">Tu carrito está actualmente vacío.</p>
+        <p style="font-size: 0.9rem; margin-top: 4px;" data-i18n="cart_empty_sub">Selecciona productos de arriba o visita nuestro menú para añadir tus bebidas favoritas.</p>
       </div>
 
       <div class="cart-total-bar">
-        <span class="cart-total-title">Total Estimado</span>
+        <span class="cart-total-title" data-i18n="cart_total_label">Total Estimado</span>
         <span class="cart-total-price">$0.00</span>
       </div>
     </section>
@@ -228,8 +237,8 @@
     <!-- 5. Formulario de Registro y Checkout -->
     <section class="checkout-card">
       <div class="checkout-intro">
-        <h2>Registro de Cliente</h2>
-        <p>Por favor completa tus datos para procesar el pedido y generar tu ticket digital de entrega.</p>
+        <h2 data-i18n="reg_title">Registro de Cliente</h2>
+        <p data-i18n="reg_desc">Por favor completa tus datos para procesar el pedido y generar tu ticket digital de entrega.</p>
       </div>
 
       <form class="formulario" id="formulario" name="form">
@@ -237,9 +246,9 @@
           
           <!-- Nombre -->
           <div class="formulario__grupo" id="grupo__nombre">
-            <label for="nombre" class="formulario__label">Nombre Completo</label>
+            <label for="nombre" class="formulario__label" data-i18n="lbl_name">Nombre Completo</label>
             <div class="formulario__grupo-input">
-              <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Ej. Juan Pérez" required>
+              <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Ej. Juan Pérez" data-i18n-placeholder="lbl_name" required>
               <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
             <p class="formulario__input-error">Solo se aceptan letras y espacios (2 a 40 caracteres).</p>
@@ -247,9 +256,9 @@
 
           <!-- Correo -->
           <div class="formulario__grupo" id="grupo__correo">
-            <label for="correo" class="formulario__label">Correo Electrónico</label>
+            <label for="correo" class="formulario__label" data-i18n="lbl_email">Correo Electrónico</label>
             <div class="formulario__grupo-input">
-              <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@ejemplo.com" required>
+              <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@ejemplo.com" data-i18n-placeholder="lbl_email" required>
               <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
             <p class="formulario__input-error">Ingrese un correo electrónico válido (ej. usuario@gmail.com).</p>
@@ -257,9 +266,9 @@
 
           <!-- Teléfono -->
           <div class="formulario__grupo" id="grupo__telefono">
-            <label for="telefono" class="formulario__label">Número Telefónico</label>
+            <label for="telefono" class="formulario__label" data-i18n="lbl_phone">Número Telefónico</label>
             <div class="formulario__grupo-input">
-              <input type="tel" class="formulario__input" name="telefono" id="telefono" placeholder="Ej. 5512345678" required>
+              <input type="tel" class="formulario__input" name="telefono" id="telefono" placeholder="Ej. 5512345678" data-i18n-placeholder="lbl_phone" required>
               <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
             <p class="formulario__input-error">Solo números (entre 7 y 14 dígitos).</p>
@@ -267,9 +276,9 @@
 
           <!-- Edad -->
           <div class="formulario__grupo" id="grupo__edad">
-            <label for="edad" class="formulario__label">Edad</label>
+            <label for="edad" class="formulario__label" data-i18n="lbl_age">Edad</label>
             <div class="formulario__grupo-input">
-              <input type="number" class="formulario__input" name="edad" id="edad" min="1" max="99" placeholder="Ej. 25" required>
+              <input type="number" class="formulario__input" name="edad" id="edad" min="1" max="99" placeholder="Ej. 25" data-i18n-placeholder="lbl_age" required>
               <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
             <p class="formulario__input-error">Ingrese una edad válida (1 a 99 años).</p>
@@ -277,9 +286,9 @@
 
           <!-- Dirección -->
           <div class="formulario__grupo full-width" id="grupo__direccion">
-            <label for="direccion" class="formulario__label">Dirección de Entrega o Sucursal</label>
+            <label for="direccion" class="formulario__label" data-i18n="lbl_address">Dirección de Entrega o Sucursal</label>
             <div class="formulario__grupo-input">
-              <input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="Calle, número, colonia y ciudad" required>
+              <input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="Calle, número, colonia y ciudad" data-i18n-placeholder="lbl_address" required>
               <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
             <p class="formulario__input-error">La dirección debe tener entre 5 y 60 caracteres.</p>
@@ -290,23 +299,23 @@
         <!-- Método de Pago -->
         <div class="payment-selector">
           <div class="payment-title">
-            <i class="fas fa-credit-card"></i> Selecciona tu Método de Pago
+            <i class="fas fa-credit-card"></i> <span data-i18n="payment_sec_title">Selecciona tu Método de Pago</span>
           </div>
           <div class="payment-options-grid">
             <label class="payment-card-option" for="tarjeta">
               <input type="radio" name="tipo" id="tarjeta" value="Tarjeta de Crédito" checked>
               <div class="payment-card-label">
-                <strong>Tarjeta de Crédito / Débito</strong>
-                <span>Pago electrónico seguro</span>
-                <span class="discount-badge"><i class="fas fa-tag"></i> 15% Descuento Especial</span>
+                <strong data-i18n="payment_card_title">Tarjeta de Crédito / Débito</strong>
+                <span data-i18n="payment_card_sub">Pago electrónico seguro</span>
+                <span class="discount-badge"><i class="fas fa-tag"></i> <span data-i18n="payment_card_badge">15% Descuento Especial</span></span>
               </div>
             </label>
 
             <label class="payment-card-option" for="efectivo">
               <input type="radio" name="tipo" id="efectivo" value="Dinero en Efectivo">
               <div class="payment-card-label">
-                <strong>Efectivo al Recoger</strong>
-                <span>Paga directo en mostrador al recoger tu orden</span>
+                <strong data-i18n="payment_cash_title">Efectivo al Recoger</strong>
+                <span data-i18n="payment_cash_sub">Paga directo en mostrador al recoger tu orden</span>
               </div>
             </label>
           </div>
@@ -324,10 +333,10 @@
         <!-- Botones de Acción del Formulario -->
         <div class="form-actions-row">
           <button id="boton2" type="button" class="btn-clear">
-            <i class="fas fa-eraser"></i> Limpiar Campos
+            <i class="fas fa-eraser"></i> <span data-i18n="btn_clear">Limpiar Campos</span>
           </button>
           <button id="boton" type="button" class="btn-generate-ticket">
-            <i class="fas fa-receipt"></i> Generar Ticket y Registrar Pedido
+            <i class="fas fa-receipt"></i> <span data-i18n="btn_generate_ticket">Generar Ticket y Registrar Pedido</span>
           </button>
         </div>
 
@@ -339,10 +348,10 @@
                 <img src="Img/logo.png" alt="Starbucks Logo">
                 <div class="ticket-brand-text">
                   <h2>Starbucks Coffee®</h2>
-                  <p>1500 Broadway, New York NY • Sucursal Oficial</p>
+                  <p>1500 Broadway, New York NY • Official Pickup Branch</p>
                 </div>
               </div>
-              <span class="ticket-badge-pill">Ticket Digital</span>
+              <span class="ticket-badge-pill" data-i18n="ticket_badge">Ticket Digital</span>
             </div>
 
             <!-- Contenido dinámico del ticket -->
@@ -350,11 +359,11 @@
 
             <div class="ticket-footer-centrar">
               <img src="Img/barras.png" alt="Código de Barras" class="ticket-barcode-img">
-              <p>Presenta este código al recoger tu pedido en mostrador.<br>¡Starbucks® agradece tu preferencia!</p>
+              <p data-i18n="ticket_ready_note">Presenta este código al recoger tu pedido en mostrador.<br>¡Starbucks® agradece tu preferencia!</p>
               
               <div class="ticket-action-btns">
                 <button type="button" class="btn-print-ticket" onclick="printTicket()">
-                  <i class="fas fa-print"></i> Imprimir / Guardar Ticket
+                  <i class="fas fa-print"></i> <span data-i18n="btn_print_ticket">Imprimir / Guardar Ticket</span>
                 </button>
               </div>
             </div>
@@ -368,8 +377,8 @@
     <section class="ticket-history-card" id="seccion-historial">
       <div class="history-header">
         <div class="history-title-box">
-          <h2><i class="fas fa-clock-rotate-left"></i> Historial de Tickets y Pedidos</h2>
-          <p>Monitorea el estado en vivo de tus órdenes generadas y consulta pedidos anteriores.</p>
+          <h2><i class="fas fa-clock-rotate-left"></i> <span data-i18n="history_title">Historial de Tickets y Pedidos</span></h2>
+          <p data-i18n="history_desc">Monitorea el estado en vivo de tus órdenes generadas y consulta pedidos anteriores.</p>
         </div>
         <span class="history-count-badge" id="historial-count">0 pedidos</span>
       </div>
@@ -386,11 +395,11 @@
     <div class="footer-top-cta">
       <div class="footer-cta-wrapper">
         <div class="footer-cta-text">
-          <h3><i class="fas fa-coffee" style="color: var(--sb-accent-gold);"></i> ¿Prefieres ver nuestro menú primero?</h3>
-          <p>Conoce las notas de cata de nuestros granos y las bebidas frías de temporada disponibles hoy.</p>
+          <h3><i class="fas fa-coffee" style="color: var(--sb-accent-gold);"></i> <span data-i18n="footer_rewards_title">¿Prefieres ver nuestro menú primero?</span></h3>
+          <p data-i18n="footer_rewards_desc">Conoce las notas de cata de nuestros granos y las bebidas frías de temporada disponibles hoy.</p>
         </div>
         <a href="menu.html" class="footer-cta-btn">
-          <span>Ver Menú</span> <i class="fas fa-arrow-right"></i>
+          <span data-i18n="nav_menu">Ver Menú</span> <i class="fas fa-arrow-right"></i>
         </a>
       </div>
     </div>
@@ -416,7 +425,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Explorar Menú</h4>
+        <h4 data-i18n="footer_menu_header">Explorar Menú</h4>
         <ul class="footer-links">
           <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Bebidas Frías & Frappuccinos</a></li>
           <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Espresso & Café Clásico</a></li>
@@ -427,7 +436,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Soporte & Ayuda</h4>
+        <h4 data-i18n="footer_support_header">Soporte & Ayuda</h4>
         <ul class="footer-links">
           <li><a href="https://www.starbucks.com.mx/customer-service/" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Centro de Ayuda</a></li>
           <li><a href="contacto.html"><i class="fas fa-chevron-right"></i> Formulario de Contacto</a></li>
@@ -437,7 +446,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Desarrollador del Proyecto</h4>
+        <h4 data-i18n="footer_author_header">Desarrollador del Proyecto</h4>
         <div class="author-badge">
           <div class="author-badge-top">
             <div class="author-avatar-icon">
@@ -460,7 +469,7 @@
     <!-- Collapsible Legal Terms & Rights -->
     <div class="footer-legal-card">
       <button class="legal-toggle-btn" onclick="toggleLegal()" aria-expanded="false">
-        <span><i class="fas fa-shield-alt" style="color: var(--sb-accent-gold); margin-right: 8px;"></i> Aviso Legal, Derechos de Autor y Marcas Registradas</span>
+        <span><i class="fas fa-shield-alt" style="color: var(--sb-accent-gold); margin-right: 8px;"></i> <span data-i18n="footer_legal_btn">Aviso Legal, Derechos de Autor y Marcas Registradas</span></span>
         <i class="fas fa-chevron-down"></i>
       </button>
       <div class="legal-content-body">
@@ -472,7 +481,7 @@
     <!-- Bottom Meta Copyright Bar -->
     <div class="footer-bottom">
       <div class="footer-bottom-wrapper">
-        <div>
+        <div data-i18n="footer_rights">
           © 2026 Starbucks Corporation & Miguel Ángel Ramos Soto. Todos los derechos reservados.
         </div>
         <div class="footer-meta-dates">
@@ -484,6 +493,7 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="JS/translations.js"></script>
   <script src="JS/myscript.js"></script>
   <script src="JS/store.js"></script>
 </body>

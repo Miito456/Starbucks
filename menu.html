@@ -25,23 +25,32 @@
       </a>
     </div>
 
-    <button class="toggle-menu-btn" onclick="toggleMenu()" aria-label="Abrir Menú de Navegación">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="header-right-actions">
+      <!-- Language Switcher -->
+      <div class="lang-switch-container" aria-label="Language Selector">
+        <button type="button" class="lang-btn active" data-lang="es" onclick="switchLanguage('es')">ES</button>
+        <span class="lang-divider">/</span>
+        <button type="button" class="lang-btn" data-lang="en" onclick="switchLanguage('en')">EN</button>
+      </div>
+
+      <button class="toggle-menu-btn" onclick="toggleMenu()" aria-label="Abrir Menú de Navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
 
     <div class="navegador-wrapper">
       <ul class="navegador">
-        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-        <li><a href="menu.html" class="activo"><i class="fas fa-mug-hot"></i> Menú</a></li>
+        <li><a href="index.html"><i class="fas fa-home"></i> <span data-i18n="nav_home">Inicio</span></a></li>
+        <li><a href="menu.html" class="activo"><i class="fas fa-mug-hot"></i> <span data-i18n="nav_menu">Menú</span></a></li>
         <li>
           <a href="compra.html" class="nav-cart-link">
-            <i class="fas fa-shopping-cart"></i> Compra
+            <i class="fas fa-shopping-cart"></i> <span data-i18n="nav_shop">Compra</span>
             <span class="cart-badge">0</span>
           </a>
         </li>
-        <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+        <li><a href="contacto.html"><i class="fas fa-envelope"></i> <span data-i18n="nav_contact">Contacto</span></a></li>
       </ul>
     </div>
   </header>
@@ -49,24 +58,24 @@
   <!-- Menu Banner -->
   <section class="menu-hero">
     <div class="menu-hero-content">
-      <h1>Nuestro Delicioso Menú</h1>
-      <p>Explora nuestras bebidas artesanales preparadas al momento, exquisitos postres horneados y productos exclusivos para llevar la experiencia Starbucks contigo.</p>
+      <h1 data-i18n="menu_hero_title">Nuestro Delicioso Menú</h1>
+      <p data-i18n="menu_hero_desc">Explora nuestras bebidas artesanales preparadas al momento, exquisitos postres horneados y productos exclusivos para llevar la experiencia Starbucks contigo.</p>
     </div>
   </section>
 
   <!-- Filter Tabs Bar -->
   <div class="menu-nav-tabs">
     <button class="menu-tab-btn active" onclick="filterMenu('all', this)">
-      <i class="fas fa-border-all"></i> Todos los Productos
+      <i class="fas fa-border-all"></i> <span data-i18n="tab_all">Todos los Productos</span>
     </button>
     <button class="menu-tab-btn" onclick="filterMenu('bebidas', this)">
-      <i class="fas fa-glass-water"></i> Bebidas
+      <i class="fas fa-glass-water"></i> <span data-i18n="tab_drinks">Bebidas</span>
     </button>
     <button class="menu-tab-btn" onclick="filterMenu('alimentos', this)">
-      <i class="fas fa-cookie-bite"></i> Alimentos
+      <i class="fas fa-cookie-bite"></i> <span data-i18n="tab_food">Alimentos</span>
     </button>
     <button class="menu-tab-btn" onclick="filterMenu('extras', this)">
-      <i class="fas fa-mug-saucer"></i> Extras & Mercancía
+      <i class="fas fa-mug-saucer"></i> <span data-i18n="tab_extras">Extras & Mercancía</span>
     </button>
   </div>
 
@@ -77,9 +86,9 @@
         <div class="section-icon-badge">
           <i class="fas fa-mug-hot"></i>
         </div>
-        <h2>Bebidas de Especialidad</h2>
+        <h2 data-i18n="sec_drinks_title">Bebidas de Especialidad</h2>
       </div>
-      <span class="menu-section-count">3 Variedades</span>
+      <span class="menu-section-count" data-i18n="sec_drinks_count">3 Variedades</span>
     </div>
 
     <div class="menu-grid">
@@ -87,15 +96,15 @@
       <div class="product-card" style="--card-theme: #006241; --card-hover-bg: #1e3932;">
         <div class="card-circle"></div>
         <div class="card-content">
-          <span class="card-pill-tag">Más Vendido</span>
+          <span class="card-pill-tag">Matcha</span>
           <h3>Green Coffee®</h3>
-          <p>Deliciosa combinación de infusión de té matcha con nuestro clásico Frappuccino artesanal.</p>
+          <p data-i18n="prod_green_coffee_desc">Deliciosa combinación de infusión de té matcha con nuestro clásico Frappuccino artesanal.</p>
           <div class="card-price-row">
             <span class="card-price">$12.99</span>
           </div>
           <div class="card-actions">
             <a href="compra.html" class="btn-card-buy">
-              <i class="fas fa-shopping-bag"></i> Comprar
+              <i class="fas fa-shopping-bag"></i> <span data-i18n="btn_buy">Comprar</span>
             </a>
             <button class="btn-card-add" onclick="quickAddToCart('Green Coffee®', 12.99, 'Img/img1.png')" title="Añadir al carrito">
               <i class="fas fa-plus"></i>
@@ -109,15 +118,15 @@
       <div class="product-card" style="--card-theme: #eb7495; --card-hover-bg: #9d174d;">
         <div class="card-circle"></div>
         <div class="card-content">
-          <span class="card-pill-tag">Temporada</span>
+          <span class="card-pill-tag">Berry</span>
           <h3>Fresa Cream®</h3>
-          <p>Suave crema batida combinada con fresas naturales cosechadas y jarabe dulce artesanal.</p>
+          <p data-i18n="prod_fresa_cream_desc">Suave crema batida combinada con fresas naturales cosechadas y jarabe dulce artesanal.</p>
           <div class="card-price-row">
             <span class="card-price">$14.99</span>
           </div>
           <div class="card-actions">
             <a href="compra.html" class="btn-card-buy">
-              <i class="fas fa-shopping-bag"></i> Comprar
+              <i class="fas fa-shopping-bag"></i> <span data-i18n="btn_buy">Comprar</span>
             </a>
             <button class="btn-card-add" onclick="quickAddToCart('Fresa Cream®', 14.99, 'Img/img2.png')" title="Añadir al carrito">
               <i class="fas fa-plus"></i>
@@ -131,15 +140,15 @@
       <div class="product-card" style="--card-theme: #d752b1; --card-hover-bg: #86198f;">
         <div class="card-circle"></div>
         <div class="card-content">
-          <span class="card-pill-tag">Exclusivo</span>
+          <span class="card-pill-tag">Espresso</span>
           <h3>Frambuesa Coffee®</h3>
-          <p>La intensidad de nuestro espresso tostado oscuro equilibrado con toques frescos de frambuesa silvestre.</p>
+          <p data-i18n="prod_frambuesa_desc">La intensidad de nuestro espresso tostado oscuro equilibrado con toques frescos de frambuesa silvestre.</p>
           <div class="card-price-row">
             <span class="card-price">$9.99</span>
           </div>
           <div class="card-actions">
             <a href="compra.html" class="btn-card-buy">
-              <i class="fas fa-shopping-bag"></i> Comprar
+              <i class="fas fa-shopping-bag"></i> <span data-i18n="btn_buy">Comprar</span>
             </a>
             <button class="btn-card-add" onclick="quickAddToCart('Frambuesa Coffee®', 9.99, 'Img/img3.png')" title="Añadir al carrito">
               <i class="fas fa-plus"></i>
@@ -158,9 +167,9 @@
         <div class="section-icon-badge">
           <i class="fas fa-cookie"></i>
         </div>
-        <h2>Alimentos y Repostería</h2>
+        <h2 data-i18n="sec_food_title">Alimentos y Repostería</h2>
       </div>
-      <span class="menu-section-count">3 Especialidades</span>
+      <span class="menu-section-count" data-i18n="sec_food_count">3 Especialidades</span>
     </div>
 
     <div class="menu-grid">
@@ -168,15 +177,15 @@
       <div class="product-card" style="--card-theme: #d97706; --card-hover-bg: #78350f;">
         <div class="card-circle"></div>
         <div class="card-content">
-          <span class="card-pill-tag">Favorito</span>
+          <span class="card-pill-tag">Bakery</span>
           <h3>Classic Cake®</h3>
-          <p>Esponjoso pastel horneado con vainilla de Madagascar y glaseado suave de crema de mantequilla.</p>
+          <p data-i18n="prod_cake_desc">Esponjoso pastel horneado con vainilla de Madagascar y glaseado suave de crema de mantequilla.</p>
           <div class="card-price-row">
             <span class="card-price">$5.99</span>
           </div>
           <div class="card-actions">
             <a href="compra.html" class="btn-card-buy">
-              <i class="fas fa-shopping-bag"></i> Comprar
+              <i class="fas fa-shopping-bag"></i> <span data-i18n="btn_buy">Comprar</span>
             </a>
             <button class="btn-card-add" onclick="quickAddToCart('Classic Cake®', 5.99, 'Img/extra2.png')" title="Añadir al carrito">
               <i class="fas fa-plus"></i>
@@ -190,15 +199,15 @@
       <div class="product-card" style="--card-theme: #f59e0b; --card-hover-bg: #92400e;">
         <div class="card-circle"></div>
         <div class="card-content">
-          <span class="card-pill-tag">Clásico</span>
+          <span class="card-pill-tag">Classic</span>
           <h3>Classic Donut®</h3>
-          <p>Dona tradicional glaseada con una textura suave, dorada a la perfección para acompañar tu café.</p>
+          <p data-i18n="prod_donut_desc">Dona tradicional glaseada con una textura suave, dorada a la perfección para acompañar tu café.</p>
           <div class="card-price-row">
             <span class="card-price">$6.99</span>
           </div>
           <div class="card-actions">
             <a href="compra.html" class="btn-card-buy">
-              <i class="fas fa-shopping-bag"></i> Comprar
+              <i class="fas fa-shopping-bag"></i> <span data-i18n="btn_buy">Comprar</span>
             </a>
             <button class="btn-card-add" onclick="quickAddToCart('Classic Donut®', 6.99, 'Img/extra3.png')" title="Añadir al carrito">
               <i class="fas fa-plus"></i>
@@ -212,15 +221,15 @@
       <div class="product-card" style="--card-theme: #ea580c; --card-hover-bg: #9a3412;">
         <div class="card-circle"></div>
         <div class="card-content">
-          <span class="card-pill-tag">Saludable</span>
+          <span class="card-pill-tag">Organic</span>
           <h3>Carrot Muffin®</h3>
-          <p>Muffin artesanal de zanahoria con nueces tostadas, pasas selectas y especias aromáticas de canela.</p>
+          <p data-i18n="prod_muffin_desc">Muffin artesanal de zanahoria con nueces tostadas, pasas selectas y especias aromáticas de canela.</p>
           <div class="card-price-row">
             <span class="card-price">$8.99</span>
           </div>
           <div class="card-actions">
             <a href="compra.html" class="btn-card-buy">
-              <i class="fas fa-shopping-bag"></i> Comprar
+              <i class="fas fa-shopping-bag"></i> <span data-i18n="btn_buy">Comprar</span>
             </a>
             <button class="btn-card-add" onclick="quickAddToCart('Carrot Muffin®', 8.99, 'Img/extra4.png')" title="Añadir al carrito">
               <i class="fas fa-plus"></i>
@@ -239,9 +248,9 @@
         <div class="section-icon-badge">
           <i class="fas fa-gift"></i>
         </div>
-        <h2>Extras & Mercancía Oficial</h2>
+        <h2 data-i18n="sec_extras_title">Extras & Mercancía Oficial</h2>
       </div>
-      <span class="menu-section-count">3 Artículos</span>
+      <span class="menu-section-count" data-i18n="sec_extras_count">3 Artículos</span>
     </div>
 
     <div class="menu-grid">
@@ -249,15 +258,15 @@
       <div class="product-card" style="--card-theme: #854d0e; --card-hover-bg: #451a03;">
         <div class="card-circle"></div>
         <div class="card-content">
-          <span class="card-pill-tag">Grano Entero</span>
+          <span class="card-pill-tag">Whole Bean</span>
           <h3>Natural Coffee®</h3>
-          <p>Bolsa de café de grano entero premium de tueste medio, listo para moler y preparar en casa.</p>
+          <p data-i18n="prod_natural_desc">Bolsa de café de grano entero premium de tueste medio, listo para moler y preparar en casa.</p>
           <div class="card-price-row">
             <span class="card-price">$12.99</span>
           </div>
           <div class="card-actions">
             <a href="compra.html" class="btn-card-buy">
-              <i class="fas fa-shopping-bag"></i> Comprar
+              <i class="fas fa-shopping-bag"></i> <span data-i18n="btn_buy">Comprar</span>
             </a>
             <button class="btn-card-add" onclick="quickAddToCart('Natural Coffee®', 12.99, 'Img/extra5.png')" title="Añadir al carrito">
               <i class="fas fa-plus"></i>
@@ -271,15 +280,15 @@
       <div class="product-card" style="--card-theme: #0284c7; --card-hover-bg: #075985;">
         <div class="card-circle"></div>
         <div class="card-content">
-          <span class="card-pill-tag">Edición Limitada</span>
+          <span class="card-pill-tag">Edition</span>
           <h3>Custom Thermos®</h3>
-          <p>Termo térmico de acero inoxidable doble capa, mantiene tus bebidas calientes por 12 horas y frías por 24.</p>
+          <p data-i18n="prod_thermos_desc">Termo térmico de acero inoxidable doble capa, mantiene tus bebidas calientes por 12 horas y frías por 24.</p>
           <div class="card-price-row">
             <span class="card-price">$20.99</span>
           </div>
           <div class="card-actions">
             <a href="compra.html" class="btn-card-buy">
-              <i class="fas fa-shopping-bag"></i> Comprar
+              <i class="fas fa-shopping-bag"></i> <span data-i18n="btn_buy">Comprar</span>
             </a>
             <button class="btn-card-add" onclick="quickAddToCart('Custom Thermos®', 20.99, 'Img/extra6.png')" title="Añadir al carrito">
               <i class="fas fa-plus"></i>
@@ -293,15 +302,15 @@
       <div class="product-card" style="--card-theme: #0f766e; --card-hover-bg: #134e4a;">
         <div class="card-circle"></div>
         <div class="card-content">
-          <span class="card-pill-tag">Coleccionable</span>
+          <span class="card-pill-tag">Original</span>
           <h3>Starbucks Mug®</h3>
-          <p>Taza clásica de cerámica vidriada de alta durabilidad con el icónico emblema de la Sirena Starbucks.</p>
+          <p data-i18n="prod_mug_desc">Taza clásica de cerámica vidriada de alta durabilidad con el icónico emblema de la Sirena Starbucks.</p>
           <div class="card-price-row">
             <span class="card-price">$18.99</span>
           </div>
           <div class="card-actions">
             <a href="compra.html" class="btn-card-buy">
-              <i class="fas fa-shopping-bag"></i> Comprar
+              <i class="fas fa-shopping-bag"></i> <span data-i18n="btn_buy">Comprar</span>
             </a>
             <button class="btn-card-add" onclick="quickAddToCart('Starbucks Mug®', 18.99, 'Img/extra7.png')" title="Añadir al carrito">
               <i class="fas fa-plus"></i>
@@ -318,11 +327,11 @@
     <div class="footer-top-cta">
       <div class="footer-cta-wrapper">
         <div class="footer-cta-text">
-          <h3><i class="fas fa-star" style="color: var(--sb-accent-gold);"></i> ¿Listo para saborear lo mejor?</h3>
-          <p>Agrega tus productos favoritos al carrito y personaliza tu pedido en línea de forma fácil y segura.</p>
+          <h3><i class="fas fa-star" style="color: var(--sb-accent-gold);"></i> <span data-i18n="footer_rewards_title">¿Listo para saborear lo mejor?</span></h3>
+          <p data-i18n="footer_rewards_desc">Agrega tus productos favoritos al carrito y personaliza tu pedido en línea de forma fácil y segura.</p>
         </div>
         <a href="compra.html" class="footer-cta-btn">
-          <span>Ir al Carrito</span> <i class="fas fa-shopping-cart"></i>
+          <span data-i18n="footer_rewards_btn">Ir al Carrito</span> <i class="fas fa-shopping-cart"></i>
         </a>
       </div>
     </div>
@@ -348,7 +357,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Explorar Menú</h4>
+        <h4 data-i18n="footer_menu_header">Explorar Menú</h4>
         <ul class="footer-links">
           <li><a href="#cat-bebidas"><i class="fas fa-chevron-right"></i> Bebidas Frías & Frappuccinos</a></li>
           <li><a href="#cat-bebidas"><i class="fas fa-chevron-right"></i> Espresso & Café Clásico</a></li>
@@ -359,7 +368,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Soporte & Ayuda</h4>
+        <h4 data-i18n="footer_support_header">Soporte & Ayuda</h4>
         <ul class="footer-links">
           <li><a href="https://www.starbucks.com.mx/customer-service/" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Centro de Ayuda</a></li>
           <li><a href="contacto.html"><i class="fas fa-chevron-right"></i> Formulario de Contacto</a></li>
@@ -369,7 +378,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Desarrollador del Proyecto</h4>
+        <h4 data-i18n="footer_author_header">Desarrollador del Proyecto</h4>
         <div class="author-badge">
           <div class="author-badge-top">
             <div class="author-avatar-icon">
@@ -392,7 +401,7 @@
     <!-- Collapsible Legal Terms & Rights -->
     <div class="footer-legal-card">
       <button class="legal-toggle-btn" onclick="toggleLegal()" aria-expanded="false">
-        <span><i class="fas fa-shield-alt" style="color: var(--sb-accent-gold); margin-right: 8px;"></i> Aviso Legal, Derechos de Autor y Marcas Registradas</span>
+        <span><i class="fas fa-shield-alt" style="color: var(--sb-accent-gold); margin-right: 8px;"></i> <span data-i18n="footer_legal_btn">Aviso Legal, Derechos de Autor y Marcas Registradas</span></span>
         <i class="fas fa-chevron-down"></i>
       </button>
       <div class="legal-content-body">
@@ -404,7 +413,7 @@
     <!-- Bottom Meta Copyright Bar -->
     <div class="footer-bottom">
       <div class="footer-bottom-wrapper">
-        <div>
+        <div data-i18n="footer_rights">
           © 2026 Starbucks Corporation & Miguel Ángel Ramos Soto. Todos los derechos reservados.
         </div>
         <div class="footer-meta-dates">
@@ -416,6 +425,7 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="JS/translations.js"></script>
   <script src="JS/myscript.js"></script>
   <script>
     function filterMenu(category, btn) {
@@ -448,12 +458,13 @@
     function quickAddToCart(title, price, imageSrc) {
       let cart = JSON.parse(localStorage.getItem('sb_cart_items') || '[]');
       const exists = cart.find(item => item.title === title);
+      const isEn = getCurrentLanguage() === 'en';
       if (exists) {
         exists.quantity += 1;
-        showToast(`Se aumentó la cantidad de "${title}" en el carrito`, 'info');
+        showToast(isEn ? `Increased quantity for "${title}" in cart` : `Se aumentó la cantidad de "${title}" en el carrito`, 'info');
       } else {
         cart.push({ title, price, imageSrc, quantity: 1 });
-        showToast(`¡"${title}" agregado al carrito!`, 'success');
+        showToast(isEn ? `"${title}" added to cart!` : `¡"${title}" agregado al carrito!`, 'success');
       }
       localStorage.setItem('sb_cart_items', JSON.stringify(cart));
       const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);

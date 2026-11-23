@@ -2,86 +2,96 @@
 
 [![Deploy to GitHub Pages](https://github.com/Miito456/Starbucks/actions/workflows/pages/pages-build-deployment/badge.svg)](https://miito456.github.io/Starbucks/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![JavaScript](https://img.shields.io/badge/ES6+-Vanilla%20JS-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/es/docs/Web/JavaScript)
-[![CSS3](https://img.shields.io/badge/CSS3-Design%20System-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/es/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/ES6+-Vanilla%20JS-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![CSS3](https://img.shields.io/badge/CSS3-Design%20System-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
-> Una plataforma web orientada al modelo **Starbucks Pickup**: permite explorar el catálogo, ordenar bebidas y alimentos personalizados, generar un ticket digital de retiro en tienda con código de barras y dar seguimiento en tiempo real al estado de preparación del pedido.
+> A high-performance web platform tailored for the **Starbucks Pickup** model: explore the artisan catalog, customize orders, generate instant printable digital pickup tickets with barcodes, and track preparation statuses in real-time. Features multi-language support (English & Spanish).
 
 ---
 
-## ☕ Concepto: Starbucks Pickup
+## ☕ Concept: Starbucks Pickup
 
-El modelo **Starbucks Pickup** está diseñado para agilizar la experiencia de compra mediante un flujo continuo:
+The **Starbucks Pickup** architecture is engineered for frictionless digital ordering and rapid in-store retrieval:
 
 ```
-[ Explorar Catálogo ] ➔ [ Carrito Persistente ] ➔ [ Registro & Pago ] ➔ [ Ticket con Código de Barras ] ➔ [ Monitor de Estado ]
+[ Browse Catalog ] ➔ [ Persistent Cart ] ➔ [ Checkout & Payment ] ➔ [ Barcode Pickup Ticket ] ➔ [ Live Order Monitor ]
 ```
 
-1. **Selección**: El usuario explora bebidas artesanales, repostería y coleccionables con filtros interactivos por categoría.
-2. **Personalización y Carrito**: Control de cantidades y persistencia en cliente mediante `localStorage`.
-3. **Registro y Descuento**: Formulario con validación en tiempo real de campos (nombre, correo, teléfono, edad, dirección) y cálculo de descuento automático (15% con tarjeta).
-4. **Emisión de Ticket Digital**: Generación instantánea de comprobante con folio único `#SB-XXXX`, desglose de artículos, fecha, sucursal y código de barras.
-5. **Historial y Seguimiento en Vivo**: Panel de pedidos para monitorear el ciclo de vida de la orden:
-   - `⏳ En Espera`: Pedido emitido y en cola de recepción.
-   - `☕ En Preparación`: En proceso de elaboración por el barista.
-   - `✅ Listo para Recoger`: Orden terminada, disponible en mostrador.
+1. **Product Discovery**: Browse handcrafted beverages, baked goods, and exclusive merchandise with responsive category filters.
+2. **Persistent Cart & Customization**: Real-time quantity controls, unit price calculation, and cross-session persistence via `localStorage`.
+3. **Checkout & Instant Discount**: Real-time RegEx validation on customer data and automatic 15% discount computation on credit card payments.
+4. **Digital Barcode Receipt**: Instant generation of unique order tickets (`#SB-XXXX`) itemizing orders, dates, totals, and scannable barcode for counter pickup.
+5. **Real-time Order Lifecycle Tracker**:
+   - `⏳ Pending / In Queue`: Order created and awaiting barista confirmation.
+   - `☕ In Preparation`: Beverage crafting in progress.
+   - `✅ Ready for Pickup`: Order packaged and ready at the designated counter.
 
 ---
 
-## 🛠️ Arquitectura y Tecnologías
+## 🌐 Bilingual Support (EN / ES)
 
-El proyecto está construido bajo una arquitectura modular sin dependencias pesadas de frameworks, maximizando la velocidad de carga y la fidelidad visual:
-
-* **HTML5 Semántico**: Estructuración accesible, metadatos responsivos y marcado semántico.
-* **CSS3 Custom Design System (`theme.css`)**:
-  - Paleta de tokens de diseño (`--sb-green`, `--sb-green-dark`, `--sb-accent-cream`, etc.).
-  - Layouts simétricos con **CSS Grid** de 3 columnas y alineación responsiva inteligente.
-  - Microinteracciones con curvas cúbicas (`cubic-bezier(0.16, 1, 0.3, 1)`).
-  - Reglas de impresión exclusivas (`@media print`) para tickets limpios en formato recibo.
-* **JavaScript ES6+ Reactivo (`store.js` & `myscript.js`)**:
-  - **State Management**: Gestión reactiva del carrito y del historial de tickets en `localStorage`.
-  - **Live Validation**: Comprobación continua de expresiones regulares (RegEx) para inputs de formulario.
-  - **Toast Notification Engine**: Sistema propio de alertas no bloqueantes (reemplazando `alert()`).
-  - **Badge Syncing**: Sincronización del contador de artículos entre páginas del sitio.
+The platform includes a dedicated internationalization engine (`JS/translations.js`):
+* **Live Language Switcher**: Switch instantly between **English** and **Spanish** via the navigation bar.
+* **Persistent Locale**: Saves user language preference in `localStorage` across page reloads and cross-page navigation.
+* **Full Coverage**: Translates landing hero, product catalogs, shopping cart, checkout forms, ticket fields, and legal disclaimers.
 
 ---
 
-## 📂 Estructura del Repositorio
+## 🛠️ System Architecture & Technologies
+
+Constructed with a zero-dependency, ultra-lightweight Vanilla Web stack prioritizing render performance, accessibility, and visual polish:
+
+* **Semantic HTML5**: Responsive meta viewports, accessible data attributes (`data-i18n`), and semantic layout tags.
+* **Custom CSS3 Design System (`theme.css`)**:
+  - Consistent brand color tokens (`--sb-green`, `--sb-green-dark`, `--sb-accent-cream`, etc.).
+  - Symmetrical **CSS Grid** architecture with fluid responsive centering.
+  - Smooth microinteractions using tailored cubic beziers (`cubic-bezier(0.16, 1, 0.3, 1)`).
+  - Dedicated print rules (`@media print`) for clean thermal receipt formatting.
+* **Vanilla JavaScript ES6+ (`store.js`, `myscript.js`, `translations.js`)**:
+  - **Reactive State Management**: Client-side storage for active cart items and historic pickup tickets.
+  - **Dynamic Dom Renderer**: Live ticket creation and interactive order status progression.
+  - **Non-blocking Toast Engine**: Custom animated toast notifications replacing native alerts.
+  - **Cross-page Badge Synchronization**: Real-time shopping cart count updates on all navigation headers.
+
+---
+
+## 📂 Repository Structure
 
 ```text
-├── index.html              # Landing page principal con selector interactivo de bebidas
-├── menu.html               # Catálogo de productos con tarjetas de expansión 3D y filtros
-├── compra.html             # Tienda Pickup, carrito, checkout, ticket digital e historial
-├── contacto.html           # Página de soporte, ayuda oficial y datos del desarrollador
+├── index.html              # Main landing page featuring interactive drink selector & key highlights
+├── menu.html               # Product catalog featuring 3D circle-clip cards & category filters
+├── compra.html             # Online store, cart, customer checkout, ticket generator & order history
+├── contacto.html           # Customer support center, official links & developer inquiry form
 ├── CSS/
-│   ├── theme.css           # Tokens de diseño, tipografía, navbar, footer y toasts
-│   ├── estilo.css          # Animaciones del Hero y morphing background
-│   ├── estilomenu.css      # Grid simétrico y tarjetas con efecto clip-path
-│   ├── styles.css          # Carrito de compra y formulario de registro
-│   ├── estiloticket.css    # Recibo de compra digital e historial de estados
-│   └── estilocontacto.css  # Layout de atención al cliente y formulario de mensaje
+│   ├── theme.css           # Global design tokens, typography, navbar, footer & toast notifications
+│   ├── estilo.css          # Landing hero animations & dynamic background morphing
+│   ├── estilomenu.css      # Symmetrical product grid & interactive card hover effects
+│   ├── styles.css          # Shopping cart layout, checkout form & payment selectors
+│   ├── estiloticket.css    # Digital receipt styles, barcode rendering & order status tracking
+│   └── estilocontacto.css  # Customer support layout & contact form styles
 ├── JS/
-│   ├── store.js            # Lógica de carrito, checkout, generación de ticket e historial
-│   └── myscript.js         # Transición de vaso, menú móvil, sticky header y toasts
-└── Img/                    # Recursos visuales y activos gráficos optimizados
+│   ├── translations.js     # Bilingual dictionary (EN / ES) & live DOM internationalization engine
+│   ├── store.js            # Shopping cart logic, RegEx validation, ticket generator & order history
+│   └── myscript.js         # Beverage image slider, mobile drawer, sticky header & toast engine
+└── Img/                    # Optimized brand visual assets, product PNGs & iconography
 ```
 
 ---
 
-## 🚀 Despliegue en Vivo
+## 🚀 Live Demo
 
-El proyecto se encuentra desplegado de forma continua a través de **GitHub Pages**:
+The platform is continuously deployed on **GitHub Pages**:
 
 🔗 **[https://miito456.github.io/Starbucks/](https://miito456.github.io/Starbucks/)**
 
 ---
 
-## 👨‍💻 Desarrollador
+## 👨‍💻 Developer & Author
 
 * **Miguel Ángel Ramos Soto**
 * **GitHub**: [@Miito456](https://github.com/Miito456)
-* **Correo**: [Mito5524@gmail.com](mailto:Mito5524@gmail.com)
+* **Email**: [Mito5524@gmail.com](mailto:Mito5524@gmail.com)
 
 ---
 
-*Aviso: Este proyecto fue desarrollado con propósitos académicos y de demostración técnica de interfaces web. Starbucks® y sus logotipos son marcas registradas de Starbucks Corporation.*
+*Disclaimer: This project was developed for educational and technical portfolio demonstration purposes. Starbucks® and all associated logos are registered trademarks of Starbucks Corporation.*

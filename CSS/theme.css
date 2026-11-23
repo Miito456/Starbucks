@@ -255,6 +255,8 @@ header.site-header.scrolled {
   border-radius: var(--radius-pill);
   padding: 4px 6px;
   gap: 2px;
+  position: relative;
+  z-index: 1100;
 }
 
 .lang-btn {
@@ -859,8 +861,24 @@ footer.site-footer::before {
     padding: 12px 24px;
   }
 
+  /* Desactivar fondos y desenfoques del header cuando el menú está abierto para evitar herencia en el drawer */
+  body.menu-open header.site-header,
+  header.site-header.menu-open {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+
   .toggle-menu-btn {
     display: flex;
+    position: relative;
+    z-index: 1100;
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 
   ul.navegador {
@@ -876,7 +894,12 @@ footer.site-footer::before {
     padding: 90px 24px 30px;
     gap: 14px;
     transition: right var(--transition-smooth);
-    z-index: 1050;
+    z-index: 1050; /* Superior al backdrop (1020) para que NUNCA se desenfoque */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    filter: none !important;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 
   ul.navegador.active {
@@ -894,14 +917,18 @@ footer.site-footer::before {
     border-radius: var(--radius-sm);
   }
 
-  /* Nav Backdrop */
+  /* Nav Backdrop - Desenfoca EXCLUSIVAMENTE el fondo de la página */
   .nav-backdrop {
     display: none;
     position: fixed;
     inset: 0;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     z-index: 1020;
+    cursor: pointer;
   }
 
   .nav-backdrop.active {

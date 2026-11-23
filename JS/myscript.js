@@ -55,21 +55,30 @@ function initThumbnails() {
 function toggleMenu() {
   const menuToggle = document.querySelector('.toggle-menu-btn') || document.querySelector('.toggle');
   const navegador = document.querySelector('.navegador');
+  const header = document.querySelector('header.site-header') || document.querySelector('header');
   let backdrop = document.querySelector('.nav-backdrop');
 
   if (!backdrop) {
     backdrop = document.createElement('div');
     backdrop.className = 'nav-backdrop';
-    document.body.appendChild(backdrop);
+    if (header) {
+      header.appendChild(backdrop);
+    } else {
+      document.body.appendChild(backdrop);
+    }
     backdrop.addEventListener('click', closeMenu);
+  } else if (header && backdrop.parentElement !== header) {
+    header.appendChild(backdrop);
   }
 
-  const isActive = navegador.classList.contains('active');
+  const isActive = navegador && navegador.classList.contains('active');
   if (isActive) {
     closeMenu();
   } else {
     if (menuToggle) menuToggle.classList.add('active');
     if (navegador) navegador.classList.add('active');
+    if (header) header.classList.add('menu-open');
+    document.body.classList.add('menu-open');
     backdrop.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
@@ -78,10 +87,13 @@ function toggleMenu() {
 function closeMenu() {
   const menuToggle = document.querySelector('.toggle-menu-btn') || document.querySelector('.toggle');
   const navegador = document.querySelector('.navegador');
+  const header = document.querySelector('header.site-header') || document.querySelector('header');
   const backdrop = document.querySelector('.nav-backdrop');
 
   if (menuToggle) menuToggle.classList.remove('active');
   if (navegador) navegador.classList.remove('active');
+  if (header) header.classList.remove('menu-open');
+  document.body.classList.remove('menu-open');
   if (backdrop) backdrop.classList.remove('active');
   document.body.style.overflow = '';
 }
@@ -89,6 +101,14 @@ function closeMenu() {
 function initMobileNav() {
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMenu();
+  });
+
+  document.querySelectorAll('ul.navegador li a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        closeMenu();
+      }
+    });
   });
 }
 

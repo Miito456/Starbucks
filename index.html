@@ -1,78 +1,263 @@
-<!--Miguel Angel Ramos Soto-->
+<!-- Miguel Angel Ramos Soto -->
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-widh, initial-scale=1.0">
-		<title>Starbucks</title>
-		<link rel="stylesheet" href="CSS/estilo.css">
-		<link rel="icon" href="Img/logo.ico">
-	</head>
-	<body>
-		<section>
-			<div class="circulo"> </div>
-			<header>
-				<a href="index.html" class="logo"><img src="Img/logo.png" alt="No se encontro la imagen"></a>
-				<div class="toggle" onclick="toggleMenu();"></div>
-				<ul class="navegador">
-					<li><a href="#"class="activo">Inicio</a></li>
-					<li><a href="menu.html">Menu</a></li>
-					<script src="https://kit.fontawesome.com/63ee03b8e2.js" crossorigin="anonymous"></script>
-					<li><a href="compra.html"><i class="icono fas fa-shopping-cart"></i>Compra</a></li>
-					<li><a href="contacto.html">Contacto</a></li>
-				</ul>
-			</header>
-			<div class="contenedor">
-			<div class="textbox">
-				<h2>No es solo un café<br><br><br>Es <span>Starbucks</span></h2><br>
-				 <p>Descubre lo que hace que Starbucks® sea único, desde nuestro compromiso con la conexión humana y el café de calidad, hasta nuestras acogedoras cafeterías y deliciosos cafés que también puedes disfrutar en casa.</p>
-				 <a href="menu.html">Ver Menu</a>
-				
-			</div>
-			<div class="imgbox">
-				<img src="Img/img1.png" class="starbucks" alt="No se encontro la imagen">
-			</div>
-			<ul class="abajo">
-				<li><img src="Img/thumb1.png" alt="No se encontro la imagen" onclick="imgSlider('Img/img1.png');changeCircleColor('#017143')"></li>
-				<li><img src="Img/thumb2.png" alt="No se encontro la imagen" onclick="imgSlider('Img/img2.png');changeCircleColor('#eb7495')"></li>
-				<li><img src="Img/thumb3.png" alt="No se encontro la imagen" onclick="imgSlider('Img/img3.png');changeCircleColor('#d752b1')"></li>
-			</ul>
-			<ul class="sci">
-				<li><a href="https://www.facebook.com/Starbucks"><img src="Img/facebook.png" alt="No se encontro la imagen"></a></li>
-				<li><a href="https://twitter.com/starbucks?lang=es"><img src="Img/twitter.png" alt="No se encontro la imagen"></a></li>
-				<li><a href="https://www.instagram.com/starbucks/?hl=es-la"><img src="Img/instagram.png" alt="No se encontro la imagen"></a></li>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Starbucks - Descubre cafés artesanales, bebidas de temporada y deliciosos alimentos preparados con la mejor calidad.">
+  <title>Starbucks® - No es solo café</title>
+  <link rel="icon" href="Img/logo.ico">
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="CSS/theme.css">
+  <link rel="stylesheet" href="CSS/estilo.css">
+</head>
+<body>
 
-			</ul>
-		</section>
-	<hr><br><br>
-		<footer>
-            <div class="contenedor">
-                <p class="copy">
-                    Fecha de creación: 30 de abril del 2021.
-                    <br>
-                    Ultima actualización: 11 de junio del 2021.
-                    <br><br>
-                    Los productos (Incluya logos) mostrados en esta página son propiedad de sus respectivos representantes y no los son de ninguna manera propiedad de los creadores de esta pagina web. <br>   El único motivo de esta página es el de mostrar información sobre los diferentes productos que ofrece la empresa Starbucks®. <br>   Si necesitas conocer más sobre las leyes de autor y la manera en la que se definen sobre este contenido puedes visitar la página de derechos de autor de  <a href="https://www.starbucks.com.co/about-us/company-information/online-policies/terms-of-use">Starbucks®.</a><br> Si quieres saber más sobre el tema de derechos de autor  haz click <a href="https://www.wipo.int/copyright/es/">aquí.</a><br>     
-                    Si desea contactar con los creadores de esta página puede encontrar la información de contacto en la sección "Contacto" o bien dando click <a href="contacto.html">aquí</a>.
-                    <br>   <br>    
-                    Miguel Angel Ramos Soto - Mito5524@gmail.com <a href="https://www.facebook.com/profile.php?id=100006413612910" _blank>Facebook</a>
-                    <br><br>
-                    <b>Derechos de autor: </b> La tienda de Starbucks®, está protegida por los derechos de autor, arreglos secretos u otros métodos para la protección de la propiedad intelectual.<br> 
-                    <b> Marcas registradas: </b>  Starbucks es una marca registrada de Starbucks. Inc.® <br>    
-                        <b> Patentes:</b> Starbucks Tiene patentes que aplica a su servicio. Para información sobre las patentes de Starbucks® haz click <a href="https://www.starbucks.com.mx/about-us/company-information/online-policies/terms-of-use">aquí</a>.
-                        <br>    
-                        Si quieres conocer más de la plataforma Starbucks® puedes seguirlos en sus redes sociales, solo basta con darle click al baner de la red social que sea de tu agrado.
-                </p>
-            <div class="sociales">
-                    <a href="https://www.facebook.com/Starbucks"><i class="fab fa-facebook"></i></a>
-                    <a href="https://twitter.com/starbucks?lang=es"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/starbucks/?hl=es-la"><i class="fab fa-instagram"></i></a>
-                </div>
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="header-brand">
+      <a href="index.html" class="site-logo" aria-label="Starbucks Inicio">
+        <img src="Img/logo.png" alt="Starbucks Logo" width="68" height="68">
+      </a>
+    </div>
+
+    <button class="toggle-menu-btn" onclick="toggleMenu()" aria-label="Abrir Menú de Navegación">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="navegador-wrapper">
+      <ul class="navegador">
+        <li><a href="index.html" class="activo"><i class="fas fa-home"></i> Inicio</a></li>
+        <li><a href="menu.html"><i class="fas fa-mug-hot"></i> Menú</a></li>
+        <li>
+          <a href="compra.html" class="nav-cart-link">
+            <i class="fas fa-shopping-cart"></i> Compra
+            <span class="cart-badge">0</span>
+          </a>
+        </li>
+        <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="circulo"></div>
+
+    <div class="hero-container">
+      <div class="textbox">
+        <h1>No es solo un café<br>Es <span>Starbucks</span></h1>
+        <p>Descubre lo que hace que Starbucks® sea único: desde nuestro compromiso con la conexión humana y el café de grano ético, hasta nuestras acogedoras cafeterías y bebidas que transforman tu día.</p>
+        
+        <div class="hero-actions">
+          <a href="menu.html" class="btn-hero-primary">
+            <i class="fas fa-coffee"></i> Ver Menú Completo
+          </a>
+          <a href="compra.html" class="btn-hero-secondary">
+            <i class="fas fa-shopping-bag"></i> Ordenar en Línea
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Café de Origen Ético</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">+30</span>
+            <span class="stat-label">Bebidas & Postres</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">4.9 ★</span>
+            <span class="stat-label">Valoración de Clientes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="imgbox">
+        <div class="imgbox-backdrop-glow"></div>
+        <img src="Img/img1.png" class="starbucks" alt="Bebida Starbucks Frappuccino" width="380" height="380">
+      </div>
+    </div>
+
+    <!-- Drink Selector Thumbnails -->
+    <ul class="abajo">
+      <li onclick="imgSlider('Img/img1.png'); changeCircleColor('#006241');" title="Green Tea Frappuccino">
+        <img src="Img/thumb1.png" alt="Green Tea Frappuccino" width="55" height="55">
+      </li>
+      <li onclick="imgSlider('Img/img2.png'); changeCircleColor('#eb7495');" title="Fresa Cream">
+        <img src="Img/thumb2.png" alt="Fresa Cream" width="55" height="55">
+      </li>
+      <li onclick="imgSlider('Img/img3.png'); changeCircleColor('#d752b1');" title="Frambuesa Coffee">
+        <img src="Img/thumb3.png" alt="Frambuesa Coffee" width="55" height="55">
+      </li>
+    </ul>
+
+    <!-- Social Sidebar -->
+    <ul class="sci">
+      <li>
+        <a href="https://www.facebook.com/Starbucks" target="_blank" rel="noopener noreferrer" aria-label="Facebook Oficial">
+          <img src="Img/facebook.png" alt="Facebook">
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/starbucks" target="_blank" rel="noopener noreferrer" aria-label="Twitter Oficial">
+          <img src="Img/twitter.png" alt="Twitter">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/starbucks" target="_blank" rel="noopener noreferrer" aria-label="Instagram Oficial">
+          <img src="Img/instagram.png" alt="Instagram">
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Interactive Features Section -->
+  <section class="home-features">
+    <div class="home-features-wrapper">
+      <div class="features-header">
+        <span class="sub-title">La Diferencia Starbucks</span>
+        <h2>La taza perfecta, preparada especialmente para ti</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <h3>Granos 100% Arábica</h3>
+          <p>Seleccionamos meticulosamente cada grano de las mejores regiones cafetaleras para garantizar una nota de cata inigualable.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <i class="fas fa-hand-holding-heart"></i>
+          </div>
+          <h3>Conexión & Comunidad</h3>
+          <p>Más que un café, creamos espacios cálidos donde el trabajo, la amistad y el confort se encuentran en cada visita.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <i class="fas fa-truck-fast"></i>
+          </div>
+          <h3>Ordena y Recoge</h3>
+          <p>Haz tu pedido desde nuestra plataforma web, personaliza tus complementos y recoge rápidamente en tu sucursal más cercana.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Starbucks Footer -->
+  <footer class="site-footer">
+    <div class="footer-top-cta">
+      <div class="footer-cta-wrapper">
+        <div class="footer-cta-text">
+          <h3><i class="fas fa-star" style="color: var(--sb-accent-gold);"></i> Únete a Starbucks Rewards</h3>
+          <p>Gana estrellas con cada compra, disfruta de bebidas de cortesía en tu cumpleaños y acceso exclusivo a promociones.</p>
+        </div>
+        <a href="compra.html" class="footer-cta-btn">
+          <span>Comenzar Ahora</span> <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-main">
+      <div class="footer-col">
+        <div class="footer-brand-logo">
+          <img src="Img/logo.png" alt="Starbucks Logo" width="48" height="48">
+          <span>STARBUCKS</span>
+        </div>
+        <p>Inspirar y nutrir el espíritu humano: una persona, una taza y una comunidad a la vez. Comprometidos con la sustentabilidad y el mejor café del mundo.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/Starbucks" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/starbucks" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/starbucks" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Explorar Menú</h4>
+        <ul class="footer-links">
+          <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Bebidas Frías & Frappuccinos</a></li>
+          <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Espresso & Café Clásico</a></li>
+          <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Panadería y Repostería</a></li>
+          <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Termos y Tazas Exclusivas</a></li>
+          <li><a href="compra.html"><i class="fas fa-chevron-right"></i> Carrito de Compras</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Soporte & Ayuda</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.starbucks.com.mx/customer-service/" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Centro de Ayuda</a></li>
+          <li><a href="contacto.html"><i class="fas fa-chevron-right"></i> Formulario de Contacto</a></li>
+          <li><a href="https://www.starbucks.es/responsibility/community" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Comunidad Starbucks</a></li>
+          <li><a href="https://www.wipo.int/copyright/es/" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Propiedad Intelectual WIPO</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Desarrollador del Proyecto</h4>
+        <div class="author-badge">
+          <div class="author-badge-top">
+            <div class="author-avatar-icon">
+              <i class="fas fa-user-circle"></i>
             </div>
-        </footer>
+            <div class="author-info">
+              <strong>Miguel Ángel Ramos Soto</strong>
+              <span>Proyecto Académico & Portafolio</span>
+            </div>
+          </div>
+          <p style="font-size: 0.8rem; margin-bottom: 8px;">Diseño y desarrollo web interactivo para experiencia de marca Starbucks.</p>
+          <div class="author-actions">
+            <a href="contacto.html"><i class="fas fa-address-card"></i> Contactar</a>
+            <a href="https://www.facebook.com/profile.php?id=100006413612910" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i> Perfil</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-	</body>
-	<script src="JS/myscript.js"></script>
+    <!-- Collapsible Legal Terms & Rights -->
+    <div class="footer-legal-card">
+      <button class="legal-toggle-btn" onclick="toggleLegal()" aria-expanded="false">
+        <span><i class="fas fa-shield-alt" style="color: var(--sb-accent-gold); margin-right: 8px;"></i> Aviso Legal, Derechos de Autor y Marcas Registradas</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="legal-content-body">
+        <p><strong>Aviso de Propiedad Intelectual:</strong> Los productos, logotipos, nombres comerciales, gráficos e imágenes mostrados en este sitio web son propiedad exclusiva de sus respectivos representantes y de Starbucks Coffee Company. Este proyecto fue realizado con fines demostrativos, académicos e informativos.</p>
+        <p><strong>Marcas Registradas & Patentes:</strong> Starbucks® y el logotipo de la Sirena son marcas comerciales registradas de Starbucks Corporation. Para mayor información sobre las políticas oficiales, visite los <a href="https://www.starbucks.com.mx/about-us/company-information/online-policies/terms-of-use" target="_blank" rel="noopener noreferrer">Términos de Uso de Starbucks</a> o la <a href="https://www.wipo.int/copyright/es/" target="_blank" rel="noopener noreferrer">Organización Mundial de la Propiedad Intelectual (WIPO)</a>.</p>
+      </div>
+    </div>
+
+    <!-- Bottom Meta Copyright Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-wrapper">
+        <div>
+          © 2026 Starbucks Corporation & Miguel Ángel Ramos Soto. Todos los derechos reservados.
+        </div>
+        <div class="footer-meta-dates">
+          <span class="footer-meta-pill"><i class="far fa-calendar-alt"></i> Creado: 30 de abril de 2021</span>
+          <span class="footer-meta-pill"><i class="fas fa-sync-alt"></i> Versión 2.0 Mejorada</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="JS/myscript.js"></script>
+</body>
 </html>
-
-

@@ -1,187 +1,486 @@
-/*Diego Ponce de León No.Lista. 30*/
-/*Miguel Angel Ramos Soto No.Lista. 33*/
-:root {
-    --body-bg: rgb(204, 204, 204);
-    --white: #ffffff;
-    --darkWhite: #ccc;
-    --black: #000000;
-    --dark: #615c60;
-    --themeColor: #017143;
-    --pageShadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+/* ==========================================================================
+   Starbucks Digital Ticket Receipt Styles (estiloticket.css)
+   ========================================================================== */
+
+#mostrar {
+  display: none;
+  margin: 50px auto;
+  max-width: 680px;
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap');
-
-.top-content {
-    padding-bottom: 15px;
+.ticket-wrapper {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--sb-border);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
 }
 
-.logo img {
-    height: 60px;
-    text-align: center;
+/* Green Header Accent */
+.ticket-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, var(--sb-green) 0%, #10b981 100%);
 }
 
-.top-left p {
-    margin: 0;
+.ticket-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 2px dashed var(--sb-border);
+  margin-bottom: 24px;
 }
 
-.top-left .graphic-path {
-    height: 40px;
-    position: relative;
+.ticket-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
-.top-left .graphic-path::before {
-    content: "";
-    height: 20px;
-    background-color: var(--dark);
+.ticket-brand img {
+  width: 55px;
+  height: 55px;
+}
+
+.ticket-brand-text h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--sb-green);
+  line-height: 1.2;
+}
+
+.ticket-brand-text p {
+  font-size: 0.8rem;
+  color: var(--sb-text-muted);
+}
+
+.ticket-badge-pill {
+  background: var(--sb-green-soft);
+  color: var(--sb-green);
+  border: 1px solid var(--sb-green-border);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Ticket Customer Details */
+.ticket-header-details {
+  background: var(--sb-surface-hover);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.ticket-meta-box {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--sb-border);
+  color: var(--sb-text-muted);
+}
+
+.ticket-customer-box p {
+  color: var(--sb-text);
+}
+
+.badge-payment {
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+/* Items Table */
+.ticket-items-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+
+.ticket-items-table th {
+  background: var(--sb-surface-hover);
+  color: var(--sb-text-muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  text-align: left;
+  border-radius: 4px;
+}
+
+.ticket-items-table th:last-child,
+.ticket-items-table td:last-child {
+  text-align: right;
+}
+
+.ticket-items-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--sb-border);
+  font-size: 0.92rem;
+  color: var(--sb-text);
+}
+
+/* Totals Box */
+.ticket-totals-box {
+  background: var(--sb-surface-hover);
+  border-radius: var(--radius-md);
+  padding: 18px 24px;
+  margin-bottom: 28px;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 0.95rem;
+  color: var(--sb-text-muted);
+}
+
+.total-row.discount {
+  color: #059669;
+}
+
+.total-row.final-total {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--sb-green);
+  border-top: 2px solid var(--sb-border);
+  padding-top: 12px;
+  margin-top: 6px;
+}
+
+/* Barcode & Footer of Ticket */
+.ticket-footer-centrar {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 2px dashed var(--sb-border);
+}
+
+.ticket-barcode-img {
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto 12px;
+  display: block;
+}
+
+.ticket-footer-centrar p {
+  font-size: 0.85rem;
+  color: var(--sb-text-muted);
+}
+
+.ticket-action-btns {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.btn-print-ticket {
+  background: var(--sb-green);
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.btn-print-ticket:hover {
+  background: var(--sb-green-dark);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Historial de Tickets y Estado de Pedidos
+   ========================================================================== */
+.ticket-history-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--sb-border);
+  box-shadow: var(--shadow-sm);
+  padding: 36px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--sb-border);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.history-title-box h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--sb-text);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.history-title-box h2 i {
+  color: var(--sb-green);
+}
+
+.history-title-box p {
+  color: var(--sb-text-muted);
+  font-size: 0.92rem;
+}
+
+.history-count-badge {
+  background: var(--sb-green-soft);
+  color: var(--sb-green);
+  border: 1px solid var(--sb-green-border);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.history-empty {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--sb-text-muted);
+}
+
+.history-empty i {
+  font-size: 3rem;
+  color: var(--sb-border);
+  margin-bottom: 14px;
+}
+
+.history-empty p {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--sb-text);
+  margin-bottom: 6px;
+}
+
+.history-empty span {
+  font-size: 0.88rem;
+  color: var(--sb-text-muted);
+}
+
+.history-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.history-card-item {
+  background: var(--sb-surface-hover);
+  border: 1px solid var(--sb-border);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  transition: all var(--transition-smooth);
+}
+
+.history-card-item:hover {
+  background: #ffffff;
+  border-color: var(--sb-green-border);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.history-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--sb-border);
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.history-card-id {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.order-num {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--sb-green);
+}
+
+.order-date {
+  font-size: 0.82rem;
+  color: var(--sb-text-muted);
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border: 1px solid transparent;
+}
+
+.status-badge.status-espera {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #fcd34d;
+}
+
+.status-badge.status-preparacion {
+  background: #e0f2fe;
+  color: #0369a1;
+  border-color: #7dd3fc;
+}
+
+.status-badge.status-listo {
+  background: #ecfdf5;
+  color: #047857;
+  border-color: #6ee7b7;
+}
+
+.history-card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.history-customer-info strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--sb-text);
+  margin-bottom: 4px;
+}
+
+.history-customer-info span {
+  display: block;
+  font-size: 0.86rem;
+  color: var(--sb-text-muted);
+}
+
+.history-price-info {
+  text-align: right;
+}
+
+.history-total-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--sb-text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.history-total-val {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--sb-text);
+}
+
+.history-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  border-top: 1px dashed var(--sb-border);
+}
+
+.btn-history-action {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid var(--sb-border);
+  background: #ffffff;
+  color: var(--sb-text);
+}
+
+.btn-history-action.btn-view:hover {
+  background: var(--sb-green);
+  color: #ffffff;
+  border-color: var(--sb-green);
+}
+
+.btn-history-action.btn-step {
+  background: var(--sb-surface-hover);
+  color: var(--sb-green-dark);
+}
+
+.btn-history-action.btn-step:hover {
+  background: var(--sb-green-soft);
+  border-color: var(--sb-green);
+}
+
+.btn-history-action.btn-delete {
+  color: #ef4444;
+  margin-left: auto;
+  border-color: #fee2e2;
+  background: #fff5f5;
+}
+
+.btn-history-action.btn-delete:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+/* Print Specific Rules */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #mostrar,
+  #mostrar * {
+    visibility: visible;
+  }
+
+  #mostrar {
     position: absolute;
-    left: 15px;
-    right: 0;
-    top: -15px;
-    z-index: 2;
-}
-
-.top-left .graphic-path::after {
-    content: "";
-    height: 22px;
-    width: 17px;
-    background: var(--black);
-    position: absolute;
-    top: -13px;
-    left: 6px;
-    transform: rotate(45deg);
-}
-
-.top-left .graphic-path p {
-    color: var(--white);
-    height: 40px;
     left: 0;
-    right: -100px;
-    text-transform: uppercase;
-    background-color: var(--themeColor);
-    font: 26px;
-    z-index: 3;
-    position: absolute;
-    padding-left: 10px;
-}
-
-/* User Store Section */
-.store-user {
-    padding-bottom: 25px;
-}
-
-.store-user p {
+    top: 0;
+    width: 100%;
     margin: 0;
-    font-weight: 600;
-}
-
-.store-user .address {
-    font-weight: 400;
-}
-
-.store-user h2 {
-    color: var(--themeColor);
-    font-family: 'Rajdhani', sans-serif;
-}
-
-.extra-info p span {
-    font-weight: 400;
-}
-
-
-#mostrar{
-	display: none;
-}
-.centrar{
-    text-align: center;
-}
-
-footer .ticket{
-    text-align: center;
-    position: absolute;
-    bottom: 30px;
-    left: 75px;
-}
-
-footer hr .ticket{
-    margin-bottom: -22px;
-    border-top: 3px solid var(--darkWhite);
-}
-
-footer a .ticket{
-    color: var(--themeColor);
-}
-
-footer p .ticket{
-    padding: 6px;
-    border: 3px solid var(--darkWhite);
-    background-color: var(--white);
-    display: inline-block;
-}
-.cart-bg {
-    height: 250px;
-    bottom: 32px;
-    left: -40px;
-    opacity: 0.3;
-    position: absolute;
-}
-.balance-info .table td,
-.balance-info .table th {
     padding: 0;
-    border: 0;
-}
+  }
 
-.balance-info tr td:first-child {
-    font-weight: 600;
+  .ticket-action-btns,
+  .site-header,
+  .site-footer,
+  .back-to-top {
+    display: none !important;
+  }
 }
-
-tfoot {
-    border-top: 2px solid var(--darkWhite);
-}
-
-tfoot td {
-    font-weight: 600;
-}
-.parrafo{
-    font-weight: 400;
-    text-decoration: none;
-}
-img .barras {
-    height: 60px;
-    width: 60px;
-    align-items: center;
-    display: flex;
-
-}
-
-thead {
-    color: var(--white);
-    background: var(--themeColor);
-}
-
-.table td,
-.table th {
-    text-align: center;
-    vertical-align: middle;
-}
-
-tr th:first-child,
-tr td:first-child {
-    text-align: left;
-}
-
-.media img {
-    height: 60px;
-    width: 60px;
-}
-
-.media p {
-    font-weight: 400;
-    margin: 0;
-}
-
-.media p.title {
-    font-weight: 600;
-}
-
-

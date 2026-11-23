@@ -251,7 +251,7 @@
               <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Ej. Juan Pérez" data-i18n-placeholder="lbl_name" required>
               <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
-            <p class="formulario__input-error">Solo se aceptan letras y espacios (2 a 40 caracteres).</p>
+            <p class="formulario__input-error" data-i18n="err_name">Solo se aceptan letras y espacios (2 a 40 caracteres).</p>
           </div>
 
           <!-- Correo -->
@@ -261,7 +261,7 @@
               <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@ejemplo.com" data-i18n-placeholder="lbl_email" required>
               <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
-            <p class="formulario__input-error">Ingrese un correo electrónico válido (ej. usuario@gmail.com).</p>
+            <p class="formulario__input-error" data-i18n="err_email">Ingrese un correo electrónico válido (ej. usuario@gmail.com).</p>
           </div>
 
           <!-- Teléfono -->
@@ -271,7 +271,7 @@
               <input type="tel" class="formulario__input" name="telefono" id="telefono" placeholder="Ej. 5512345678" data-i18n-placeholder="lbl_phone" required>
               <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
-            <p class="formulario__input-error">Solo números (entre 7 y 14 dígitos).</p>
+            <p class="formulario__input-error" data-i18n="err_phone">Solo números (entre 7 y 14 dígitos).</p>
           </div>
 
           <!-- Edad -->
@@ -281,7 +281,7 @@
               <input type="number" class="formulario__input" name="edad" id="edad" min="1" max="99" placeholder="Ej. 25" data-i18n-placeholder="lbl_age" required>
               <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
-            <p class="formulario__input-error">Ingrese una edad válida (1 a 99 años).</p>
+            <p class="formulario__input-error" data-i18n="err_age">Ingrese una edad válida (1 a 99 años).</p>
           </div>
 
           <!-- Dirección -->
@@ -291,7 +291,7 @@
               <input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="Calle, número, colonia y ciudad" data-i18n-placeholder="lbl_address" required>
               <i class="formulario__validacion-estado fas fa-times-circle"></i>
             </div>
-            <p class="formulario__input-error">La dirección debe tener entre 5 y 60 caracteres.</p>
+            <p class="formulario__input-error" data-i18n="err_address">La dirección debe tener entre 5 y 60 caracteres.</p>
           </div>
 
         </div>
@@ -323,7 +323,7 @@
 
         <!-- Mensajes de Estado -->
         <div class="formulario__mensaje" id="formulario__mensaje">
-          <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor revisa que todos los campos del formulario estén correctamente llenados.</p>
+          <p><i class="fas fa-exclamation-triangle"></i> <span data-i18n="form_error_alert">Por favor revisa que todos los campos del formulario estén correctamente llenados.</span></p>
         </div>
 
         <div class="formulario__mensaje-exito" id="formulario__mensaje-exito">
@@ -395,11 +395,11 @@
     <div class="footer-top-cta">
       <div class="footer-cta-wrapper">
         <div class="footer-cta-text">
-          <h3><i class="fas fa-coffee" style="color: var(--sb-accent-gold);"></i> <span data-i18n="footer_rewards_title">¿Prefieres ver nuestro menú primero?</span></h3>
-          <p data-i18n="footer_rewards_desc">Conoce las notas de cata de nuestros granos y las bebidas frías de temporada disponibles hoy.</p>
+          <h3><i class="fas fa-coffee" style="color: var(--sb-accent-gold);"></i> <span data-i18n="footer_cta_shop_page_title">¿Prefieres ver nuestro menú primero?</span></h3>
+          <p data-i18n="footer_cta_shop_page_desc">Conoce las notas de cata de nuestros granos y las bebidas frías de temporada disponibles hoy.</p>
         </div>
         <a href="menu.html" class="footer-cta-btn">
-          <span data-i18n="nav_menu">Ver Menú</span> <i class="fas fa-arrow-right"></i>
+          <span data-i18n="footer_cta_shop_page_btn">Ver Menú</span> <i class="fas fa-arrow-right"></i>
         </a>
       </div>
     </div>
@@ -410,7 +410,7 @@
           <img src="Img/logo.png" alt="Starbucks Logo" width="48" height="48">
           <span>STARBUCKS</span>
         </div>
-        <p>Inspirar y nutrir el espíritu humano: una persona, una taza y una comunidad a la vez. Comprometidos con la sustentabilidad y el mejor café del mundo.</p>
+        <p data-i18n="footer_mission">Inspirar y nutrir el espíritu humano: una persona, una taza y una comunidad a la vez. Comprometidos con la sustentabilidad y el mejor café del mundo.</p>
         <div class="footer-socials">
           <a href="https://www.facebook.com/Starbucks" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook">
             <i class="fab fa-facebook-f"></i>
@@ -427,21 +427,21 @@
       <div class="footer-col">
         <h4 data-i18n="footer_menu_header">Explorar Menú</h4>
         <ul class="footer-links">
-          <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Bebidas Frías & Frappuccinos</a></li>
-          <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Espresso & Café Clásico</a></li>
-          <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Panadería y Repostería</a></li>
-          <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Termos y Tazas Exclusivas</a></li>
-          <li><a href="compra.html"><i class="fas fa-chevron-right"></i> Carrito de Compras</a></li>
+          <li><a href="menu.html"><i class="fas fa-chevron-right"></i> <span data-i18n="footer_menu_cold">Bebidas Frías & Frappuccinos</span></a></li>
+          <li><a href="menu.html"><i class="fas fa-chevron-right"></i> <span data-i18n="footer_menu_espresso">Espresso & Café Clásico</span></a></li>
+          <li><a href="menu.html"><i class="fas fa-chevron-right"></i> <span data-i18n="footer_menu_bakery">Panadería y Repostería</span></a></li>
+          <li><a href="menu.html"><i class="fas fa-chevron-right"></i> <span data-i18n="footer_menu_merch">Termos y Tazas Exclusivas</span></a></li>
+          <li><a href="compra.html"><i class="fas fa-chevron-right"></i> <span data-i18n="footer_menu_cart">Carrito de Compras</span></a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <h4 data-i18n="footer_support_header">Soporte & Ayuda</h4>
         <ul class="footer-links">
-          <li><a href="https://www.starbucks.com.mx/customer-service/" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Centro de Ayuda</a></li>
-          <li><a href="contacto.html"><i class="fas fa-chevron-right"></i> Formulario de Contacto</a></li>
-          <li><a href="https://www.starbucks.es/responsibility/community" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Comunidad Starbucks</a></li>
-          <li><a href="https://www.wipo.int/copyright/es/" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> Propiedad Intelectual WIPO</a></li>
+          <li><a href="https://www.starbucks.com.mx/customer-service/" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> <span data-i18n="footer_help_center">Centro de Ayuda</span></a></li>
+          <li><a href="contacto.html"><i class="fas fa-chevron-right"></i> <span data-i18n="footer_contact_form">Formulario de Contacto</span></a></li>
+          <li><a href="https://www.starbucks.es/responsibility/community" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> <span data-i18n="footer_community">Comunidad Starbucks</span></a></li>
+          <li><a href="https://www.wipo.int/copyright/es/" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right"></i> <span data-i18n="footer_wipo">Propiedad Intelectual WIPO</span></a></li>
         </ul>
       </div>
 
@@ -454,12 +454,12 @@
             </div>
             <div class="author-info">
               <strong>Miguel Ángel Ramos Soto</strong>
-              <span>Proyecto Académico & Portafolio</span>
+              <span data-i18n="footer_dev_sub">Proyecto Académico & Portafolio</span>
             </div>
           </div>
-          <p style="font-size: 0.8rem; margin-bottom: 8px;">Diseño y desarrollo web interactivo para experiencia de marca Starbucks.</p>
+          <p style="font-size: 0.8rem; margin-bottom: 8px;" data-i18n="footer_dev_desc">Diseño y desarrollo web interactivo para experiencia de marca Starbucks.</p>
           <div class="author-actions">
-            <a href="contacto.html"><i class="fas fa-address-card"></i> Contactar</a>
+            <a href="contacto.html"><i class="fas fa-address-card"></i> <span data-i18n="footer_contact_btn">Contactar</span></a>
             <a href="https://github.com/Miito456" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
           </div>
         </div>
@@ -473,8 +473,8 @@
         <i class="fas fa-chevron-down"></i>
       </button>
       <div class="legal-content-body">
-        <p><strong>Aviso de Propiedad Intelectual:</strong> Los productos, logotipos, nombres comerciales, gráficos e imágenes mostrados en este sitio web son propiedad exclusiva de sus respectivos representantes y de Starbucks Coffee Company. Este proyecto fue realizado con fines demostrativos, académicos e informativos.</p>
-        <p><strong>Marcas Registradas & Patentes:</strong> Starbucks® y el logotipo de la Sirena son marcas comerciales registradas de Starbucks Corporation. Para mayor información sobre las políticas oficiales, visite los <a href="https://www.starbucks.com.mx/about-us/company-information/online-policies/terms-of-use" target="_blank" rel="noopener noreferrer">Términos de Uso de Starbucks</a> o la <a href="https://www.wipo.int/copyright/es/" target="_blank" rel="noopener noreferrer">Organización Mundial de la Propiedad Intelectual (WIPO)</a>.</p>
+        <p><strong data-i18n="footer_legal_ip_title">Aviso de Propiedad Intelectual:</strong> <span data-i18n="footer_legal_ip_text">Los productos, logotipos, nombres comerciales, gráficos e imágenes mostrados en este sitio web son propiedad exclusiva de sus respectivos representantes y de Starbucks Coffee Company. Este proyecto fue realizado con fines demostrativos, académicos e informativos.</span></p>
+        <p><strong data-i18n="footer_legal_tm_title">Marcas Registradas & Patentes:</strong> <span data-i18n="footer_legal_tm_text">Starbucks® y el logotipo de la Sirena son marcas comerciales registradas de Starbucks Corporation. Para mayor información sobre las políticas oficiales, visite los</span> <a href="https://www.starbucks.com.mx/about-us/company-information/online-policies/terms-of-use" target="_blank" rel="noopener noreferrer" data-i18n="footer_terms_link">Términos de Uso de Starbucks</a> <span data-i18n="footer_wipo_intro">o la</span> <a href="https://www.wipo.int/copyright/es/" target="_blank" rel="noopener noreferrer" data-i18n="footer_wipo_link">Organización Mundial de la Propiedad Intelectual (WIPO)</a>.</p>
       </div>
     </div>
 
@@ -485,8 +485,8 @@
           © 2026 Starbucks Corporation & Miguel Ángel Ramos Soto. Todos los derechos reservados.
         </div>
         <div class="footer-meta-dates">
-          <span class="footer-meta-pill"><i class="far fa-calendar-alt"></i> Creado: 30 de abril de 2021</span>
-          <span class="footer-meta-pill"><i class="fas fa-sync-alt"></i> Versión 2.0 Mejorada</span>
+          <span class="footer-meta-pill"><i class="far fa-calendar-alt"></i> <span data-i18n="footer_created_date">Creado: 30 de abril de 2021</span></span>
+          <span class="footer-meta-pill"><i class="fas fa-sync-alt"></i> <span data-i18n="footer_version_tag">Versión 2.0 Mejorada</span></span>
         </div>
       </div>
     </div>

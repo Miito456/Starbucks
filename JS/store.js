@@ -60,16 +60,17 @@ function handleAddToCartClick(e) {
 function addItemToCart(title, price, imageSrc) {
   let items = getCartItems();
   const existing = items.find(item => item.title === title);
+  const isEn = typeof getCurrentLanguage === 'function' && getCurrentLanguage() === 'en';
 
   if (existing) {
     existing.quantity = (existing.quantity || 1) + 1;
     if (typeof showToast === 'function') {
-      showToast(`Se aumentó la cantidad de "${title}" (${existing.quantity})`, 'info');
+      showToast(isEn ? `Increased quantity of "${title}" (${existing.quantity})` : `Se aumentó la cantidad de "${title}" (${existing.quantity})`, 'info');
     }
   } else {
     items.push({ title, price, imageSrc, quantity: 1 });
     if (typeof showToast === 'function') {
-      showToast(`¡"${title}" agregado al carrito!`, 'success');
+      showToast(isEn ? `"${title}" added to cart!` : `¡"${title}" agregado al carrito!`, 'success');
     }
   }
 
@@ -80,12 +81,13 @@ function addItemToCart(title, price, imageSrc) {
 function removeCartItem(index) {
   let items = getCartItems();
   const removed = items[index];
+  const isEn = typeof getCurrentLanguage === 'function' && getCurrentLanguage() === 'en';
   items.splice(index, 1);
   saveCartItems(items);
   renderCart();
 
   if (removed && typeof showToast === 'function') {
-    showToast(`"${removed.title}" eliminado del carrito`, 'info');
+    showToast(isEn ? `"${removed.title}" removed from cart` : `"${removed.title}" eliminado del carrito`, 'info');
   }
 }
 
@@ -266,9 +268,11 @@ function generarTicketCompra() {
   const todosValidos = Object.values(camposValidos).every(Boolean);
   const cartItems = getCartItems();
 
+  const isEn = typeof getCurrentLanguage === 'function' && getCurrentLanguage() === 'en';
+
   if (cartItems.length === 0) {
     if (typeof showToast === 'function') {
-      showToast('Tu carrito está vacío. Añade productos antes de generar el ticket.', 'error');
+      showToast(isEn ? 'Your cart is empty. Add items before placing an order.' : 'Tu carrito está vacío. Añade productos antes de generar el ticket.', 'error');
     }
     return;
   }
@@ -278,7 +282,7 @@ function generarTicketCompra() {
 
   if (!tarjetaRadio.checked && !efectivoRadio.checked) {
     if (typeof showToast === 'function') {
-      showToast('Por favor selecciona un método de pago.', 'error');
+      showToast(isEn ? 'Please select a payment method.' : 'Por favor selecciona un método de pago.', 'error');
     }
     return;
   }
@@ -287,7 +291,7 @@ function generarTicketCompra() {
     const errorMsg = document.getElementById('formulario__mensaje');
     if (errorMsg) errorMsg.classList.add('formulario__mensaje-activo');
     if (typeof showToast === 'function') {
-      showToast('Por favor completa todos los campos del registro correctamente.', 'error');
+      showToast(isEn ? 'Please fill in all registration fields correctly.' : 'Por favor completa todos los campos del registro correctamente.', 'error');
     }
     return;
   }
@@ -360,7 +364,7 @@ function generarTicketCompra() {
   }
 
   if (typeof showToast === 'function') {
-    showToast(`¡Ticket #${pedidoNum} generado con éxito! Estado: En Espera ⏳`, 'success');
+    showToast(isEn ? `Ticket #${pedidoNum} generated successfully! Status: In Queue ⏳` : `¡Ticket #${pedidoNum} generado con éxito! Estado: En Espera ⏳`, 'success');
   }
 }
 
@@ -543,11 +547,13 @@ function viewHistoryTicket(orderId) {
   }
 
   if (typeof showToast === 'function') {
-    showToast(`Visualizando ticket #${order.id}`, 'info');
+    const isEn = typeof getCurrentLanguage === 'function' && getCurrentLanguage() === 'en';
+    showToast(isEn ? `Viewing ticket #${order.id}` : `Visualizando ticket #${order.id}`, 'info');
   }
 }
 
 function cycleOrderStatus(orderId) {
+  const isEn = typeof getCurrentLanguage === 'function' && getCurrentLanguage() === 'en';
   updateOrderInHistory(orderId, (order) => {
     if (order.status === 'En Espera') {
       order.status = 'En Preparación';
@@ -558,7 +564,7 @@ function cycleOrderStatus(orderId) {
     }
 
     if (typeof showToast === 'function') {
-      showToast(`Pedido #${order.id}: ${order.status}`, 'info');
+      showToast(isEn ? `Order #${order.id}: ${order.status}` : `Pedido #${order.id}: ${order.status}`, 'info');
     }
 
     // If currently showing this ticket, re-render its details
@@ -576,7 +582,8 @@ function deleteHistoryTicket(orderId) {
   renderTicketHistory();
 
   if (typeof showToast === 'function') {
-    showToast(`Ticket #${orderId} eliminado del historial`, 'info');
+    const isEn = typeof getCurrentLanguage === 'function' && getCurrentLanguage() === 'en';
+    showToast(isEn ? `Ticket #${orderId} deleted from history` : `Ticket #${orderId} eliminado del historial`, 'info');
   }
 }
 

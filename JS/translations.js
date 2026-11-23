@@ -1,6 +1,6 @@
 /**
  * Starbucks Bilingual Translation Engine (ES / EN)
- * Handles live DOM translation, locale persistence, and language switcher UI.
+ * Handles full live DOM translation, locale persistence, and language switcher UI.
  */
 
 const translations = {
@@ -80,11 +80,19 @@ const translations = {
     payment_card_badge: "15% Descuento Especial",
     payment_cash_title: "Efectivo al Recoger",
     payment_cash_sub: "Paga directo en mostrador al recoger tu orden",
+    form_error_alert: "Por favor revisa que todos los campos del formulario estén correctamente llenados.",
     btn_clear: "Limpiar Campos",
     btn_generate_ticket: "Generar Ticket y Registrar Pedido",
     ticket_badge: "Ticket Digital",
     ticket_ready_note: "Presenta este código al recoger tu pedido en mostrador.<br>¡Starbucks® agradece tu preferencia!",
     btn_print_ticket: "Imprimir / Guardar Ticket",
+
+    // Error hints
+    err_name: "Solo se aceptan letras y espacios (2 a 40 caracteres).",
+    err_email: "Ingrese un correo electrónico válido (ej. usuario@gmail.com).",
+    err_phone: "Solo números (entre 7 y 14 dígitos).",
+    err_age: "Ingrese una edad válida (1 a 99 años).",
+    err_address: "La dirección debe tener entre 5 y 60 caracteres.",
 
     // History (compra.html)
     history_title: "Historial de Tickets y Pedidos",
@@ -100,6 +108,7 @@ const translations = {
     contact_hero_desc: "Estamos aquí para escucharte. Ya sea que tengas preguntas sobre nuestros productos, sugerencias para mejorar tu experiencia o desees contactar al desarrollador.",
     dev_title: "Creador del Proyecto",
     dev_bio: "Desarrollador web enfocado en interfaces interactivas, rendimiento y experiencia de usuario. Este sitio fue diseñado como una propuesta digital moderna para Starbucks® Pickup.",
+    dev_location: "Ubicación: México",
     official_support_title: "Soporte Oficial Starbucks",
     official_support_desc: "Inspirar y nutrir el espíritu humano: Una persona, una taza y una comunidad a la vez. Encuentra ayuda rápida sobre compras, recompensas y facturación.",
     help_center_title: "Centro de Ayuda & FAQ",
@@ -117,16 +126,49 @@ const translations = {
     lbl_subject: "Motivo de Contacto",
     lbl_message: "Tu Mensaje *",
     btn_submit_msg: "Enviar Mensaje",
+    contact_textarea_ph: "Escribe aquí tu consulta o comentario detallado...",
+    contact_success_text: "¡Gracias por tu mensaje! Ha sido enviado exitosamente. Nos pondremos en contacto contigo a la brevedad.",
 
-    // Footer (Shared)
+    // Footer (Shared Across All Pages)
     footer_rewards_title: "Únete a Starbucks Rewards",
     footer_rewards_desc: "Gana estrellas con cada compra, disfruta de bebidas de cortesía en tu cumpleaños y acceso exclusivo a promociones.",
     footer_rewards_btn: "Comenzar Ahora",
+    footer_cta_menu_page_title: "¿Listo para saborear lo mejor?",
+    footer_cta_menu_page_desc: "Agrega tus productos favoritos al carrito y personaliza tu pedido en línea de forma fácil y segura.",
+    footer_cta_menu_page_btn: "Ir al Carrito",
+    footer_cta_shop_page_title: "¿Prefieres ver nuestro menú primero?",
+    footer_cta_shop_page_desc: "Conoce las notas de cata de nuestros granos y las bebidas frías de temporada disponibles hoy.",
+    footer_cta_shop_page_btn: "Ver Menú",
+    footer_cta_contact_page_title: "¿Se te antoja un café?",
+    footer_cta_contact_page_desc: "Conoce las notas de cata de nuestros granos y las bebidas de temporada disponibles hoy.",
+    footer_cta_contact_page_btn: "Ver Menú",
+    footer_mission: "Inspirar y nutrir el espíritu humano: una persona, una taza y una comunidad a la vez. Comprometidos con la sustentabilidad y el mejor café del mundo.",
     footer_menu_header: "Explorar Menú",
+    footer_menu_cold: "Bebidas Frías & Frappuccinos",
+    footer_menu_espresso: "Espresso & Café Clásico",
+    footer_menu_bakery: "Panadería y Repostería",
+    footer_menu_merch: "Termos y Tazas Exclusivas",
+    footer_menu_cart: "Carrito de Compras",
     footer_support_header: "Soporte & Ayuda",
+    footer_help_center: "Centro de Ayuda",
+    footer_contact_form: "Formulario de Contacto",
+    footer_community: "Comunidad Starbucks",
+    footer_wipo: "Propiedad Intelectual WIPO",
     footer_author_header: "Desarrollador del Proyecto",
+    footer_dev_sub: "Proyecto Académico & Portafolio",
+    footer_dev_desc: "Diseño y desarrollo web interactivo para experiencia de marca Starbucks.",
+    footer_contact_btn: "Contactar",
     footer_legal_btn: "Aviso Legal, Derechos de Autor y Marcas Registradas",
-    footer_rights: "© 2026 Starbucks Corporation & Miguel Ángel Ramos Soto. Todos los derechos reservados."
+    footer_legal_ip_title: "Aviso de Propiedad Intelectual:",
+    footer_legal_ip_text: "Los productos, logotipos, nombres comerciales, gráficos e imágenes mostrados en este sitio web son propiedad exclusiva de sus respectivos representantes y de Starbucks Coffee Company. Este proyecto fue realizado con fines demostrativos, académicos e informativos.",
+    footer_legal_tm_title: "Marcas Registradas & Patentes:",
+    footer_legal_tm_text: "Starbucks® y el logotipo de la Sirena son marcas comerciales registradas de Starbucks Corporation. Para mayor información sobre las políticas oficiales, visite los",
+    footer_terms_link: "Términos de Uso de Starbucks",
+    footer_wipo_intro: "o la",
+    footer_wipo_link: "Organización Mundial de la Propiedad Intelectual (WIPO)",
+    footer_rights: "© 2026 Starbucks Corporation & Miguel Ángel Ramos Soto. Todos los derechos reservados.",
+    footer_created_date: "Creado: 30 de abril de 2021",
+    footer_version_tag: "Versión 2.0 Mejorada"
   },
 
   en: {
@@ -205,11 +247,19 @@ const translations = {
     payment_card_badge: "15% Special Discount",
     payment_cash_title: "Cash on Pickup",
     payment_cash_sub: "Pay directly at the counter upon order pickup",
+    form_error_alert: "Please make sure all form fields are filled out correctly.",
     btn_clear: "Clear Fields",
     btn_generate_ticket: "Generate Ticket & Place Order",
     ticket_badge: "Digital Ticket",
     ticket_ready_note: "Present this barcode at the counter when picking up your order.<br>Starbucks® thanks you for your preference!",
     btn_print_ticket: "Print / Save Ticket",
+
+    // Error hints
+    err_name: "Only letters and spaces are accepted (2 to 40 characters).",
+    err_email: "Please enter a valid email address (e.g. user@gmail.com).",
+    err_phone: "Numbers only (between 7 and 14 digits).",
+    err_age: "Please enter a valid age (1 to 99 years).",
+    err_address: "Address must be between 5 and 60 characters.",
 
     // History (compra.html)
     history_title: "Ticket & Order History",
@@ -225,6 +275,7 @@ const translations = {
     contact_hero_desc: "We are here to listen. Whether you have questions about products, feedback, or wish to connect with the developer.",
     dev_title: "Project Creator",
     dev_bio: "Web developer focused on interactive interfaces, speed, and user experience. Built as a modern digital showcase for Starbucks® Pickup.",
+    dev_location: "Location: Mexico",
     official_support_title: "Official Starbucks Support",
     official_support_desc: "To inspire and nurture the human spirit: one person, one cup, and one neighborhood at a time. Quick answers for orders, rewards, and billing.",
     help_center_title: "Help Center & FAQ",
@@ -242,16 +293,49 @@ const translations = {
     lbl_subject: "Reason for Contact",
     lbl_message: "Your Message *",
     btn_submit_msg: "Send Message",
+    contact_textarea_ph: "Write your detailed message or feedback here...",
+    contact_success_text: "Thank you for your message! It has been successfully sent. We will get back to you shortly.",
 
-    // Footer (Shared)
+    // Footer (Shared Across All Pages)
     footer_rewards_title: "Join Starbucks Rewards",
     footer_rewards_desc: "Earn stars on every purchase, enjoy birthday complimentary treats, and gain exclusive early access to promotions.",
     footer_rewards_btn: "Get Started Now",
+    footer_cta_menu_page_title: "Ready to savor the best?",
+    footer_cta_menu_page_desc: "Add your favorite items to cart and easily customize your order online.",
+    footer_cta_menu_page_btn: "Go to Cart",
+    footer_cta_shop_page_title: "Prefer to browse our menu first?",
+    footer_cta_shop_page_desc: "Explore tasting notes of our coffee beans and seasonal cold drinks available today.",
+    footer_cta_shop_page_btn: "View Menu",
+    footer_cta_contact_page_title: "Craving a fresh coffee?",
+    footer_cta_contact_page_desc: "Explore our coffee bean tasting notes and signature seasonal drinks available today.",
+    footer_cta_contact_page_btn: "View Menu",
+    footer_mission: "To inspire and nurture the human spirit: one person, one cup, and one neighborhood at a time. Committed to sustainability and the world's finest coffee.",
     footer_menu_header: "Explore Menu",
+    footer_menu_cold: "Cold Drinks & Frappuccinos",
+    footer_menu_espresso: "Espresso & Classic Coffee",
+    footer_menu_bakery: "Bakery & Pastries",
+    footer_menu_merch: "Thermoses & Exclusive Mugs",
+    footer_menu_cart: "Shopping Cart",
     footer_support_header: "Help & Support",
+    footer_help_center: "Help Center",
+    footer_contact_form: "Contact Form",
+    footer_community: "Starbucks Community",
+    footer_wipo: "WIPO Intellectual Property",
     footer_author_header: "Project Developer",
+    footer_dev_sub: "Academic Project & Portfolio",
+    footer_dev_desc: "Interactive web design and engineering for Starbucks brand experience.",
+    footer_contact_btn: "Contact",
     footer_legal_btn: "Legal Notice, Copyright & Registered Trademarks",
-    footer_rights: "© 2026 Starbucks Corporation & Miguel Ángel Ramos Soto. All rights reserved."
+    footer_legal_ip_title: "Intellectual Property Notice:",
+    footer_legal_ip_text: "The products, logos, trade names, graphics, and images displayed on this website are the exclusive property of their respective owners and Starbucks Coffee Company. This project was built for academic and demonstration purposes.",
+    footer_legal_tm_title: "Registered Trademarks & Patents:",
+    footer_legal_tm_text: "Starbucks® and the Siren logo are registered trademarks of Starbucks Corporation. For official policy details, please visit the",
+    footer_terms_link: "Starbucks Terms of Use",
+    footer_wipo_intro: "or the",
+    footer_wipo_link: "World Intellectual Property Organization (WIPO)",
+    footer_rights: "© 2026 Starbucks Corporation & Miguel Ángel Ramos Soto. All rights reserved.",
+    footer_created_date: "Created: April 30, 2021",
+    footer_version_tag: "Version 2.0 Enhanced"
   }
 };
 

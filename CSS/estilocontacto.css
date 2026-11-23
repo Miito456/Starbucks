@@ -384,3 +384,29 @@
     gap: 36px;
   }
 }
+
+@media (max-width: 600px) {
+  .contact-hero {
+    padding: 40px 16px;
+  }
+
+  .contact-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .contact-form-card,
+  .dev-profile-card,
+  .support-card {
+    padding: 24px 16px;
+  }
+
+  .dev-profile-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .dev-contact-row {
+    font-size: 0.85rem;
+  }
+}

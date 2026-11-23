@@ -932,3 +932,71 @@ footer.site-footer::before {
     justify-content: center;
   }
 }
+
+@media (max-width: 480px) {
+  header.site-header,
+  header.site-header.scrolled {
+    padding: 10px 14px;
+  }
+
+  .site-logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .site-logo span {
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+  }
+
+  .header-right-actions {
+    gap: 6px;
+  }
+
+  .lang-switch-container {
+    padding: 2px 3px;
+    gap: 2px;
+  }
+
+  .lang-btn {
+    padding: 3px 6px;
+    font-size: 0.72rem;
+  }
+
+  .cart-badge-btn,
+  .toggle-menu-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+
+  .footer-top-cta,
+  .footer-legal-card,
+  .footer-bottom,
+  .footer-main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .footer-cta-text h3 {
+    font-size: 1.15rem;
+  }
+
+  .footer-cta-text p {
+    font-size: 0.85rem;
+  }
+
+  .author-actions {
+    flex-direction: column;
+  }
+
+  .author-actions a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-meta-dates {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

@@ -457,6 +457,74 @@
   color: #ffffff;
 }
 
+@media (max-width: 600px) {
+  #mostrar {
+    margin: 30px auto;
+  }
+
+  .ticket-wrapper {
+    padding: 24px 16px;
+  }
+
+  .ticket-top {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .ticket-brand {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ticket-meta-box {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .ticket-items-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ticket-items-table th,
+  .ticket-items-table td {
+    padding: 8px 10px;
+    font-size: 0.82rem;
+  }
+
+  .ticket-totals-box {
+    padding: 14px 16px;
+  }
+
+  .history-card-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .history-card-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .history-price-info {
+    text-align: left;
+  }
+
+  .history-card-actions {
+    flex-direction: column;
+  }
+
+  .btn-history-action {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-history-action.btn-delete {
+    margin-left: 0;
+  }
+}
+
 /* Print Specific Rules */
 @media print {
   body * {
